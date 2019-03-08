@@ -8,17 +8,79 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
   </head>
   <body>
-    <script>
-    try {
-      var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-      var recognition = new SpeechRecognition();
+    <div>
+  <a href="#" id="start_button" onclick="startDictation(event)">Dictate</a>
+</div>
+
+<div id="results">
+  <span id="final_span" class="final"></span>
+  <span id="interim_span" class="interim"></span>
+</div>
+
+<script type="text/javascript">
+var final_transcript = '';
+var recognizing = false;
+
+if ('webkitSpeechRecognition' in window) {
+
+  var recognition = new webkitSpeechRecognition();
+
+  recognition.continuous = true;
+  recognition.interimResults = true;
+
+  recognition.onstart = function() {
+    recognizing = true;
+  };
+
+  recognition.onerror = function(event) {
+    console.log(event.error);
+  };
+
+  recognition.onend = function() {
+    recognizing = false;
+  };
+
+  recognition.onresult = function(event) {
+    var interim_transcript = '';
+    for (var i = event.resultIndex; i < event.results.length; ++i) {
+      if (event.results[i].isFinal) {
+        final_transcript += event.results[i][0].transcript;
+      } else {
+        interim_transcript += event.results[i][0].transcript;
+      }
     }
-    catch(e) {
-      console.error(e);
-      $('.no-browser-support').show();
-      $('.app').hide();
-    }
-    </script>
+    final_transcript = capitalize(final_transcript);
+    final_span.innerHTML = linebreak(final_transcript);
+    interim_span.innerHTML = linebreak(interim_transcript);
+    
+  };
+}
+
+var two_line = /\n\n/g;
+var one_line = /\n/g;
+function linebreak(s) {
+  return s.replace(two_line, '<p></p>').replace(one_line, '<br>');
+}
+
+function capitalize(s) {
+  return s.replace(s.substr(0,1), function(m) { return m.toUpperCase(); });
+}
+
+function startDictation(event) {
+  if (recognizing) {
+    recognition.stop();
+    return;
+  }
+  final_transcript = '';
+  recognition.lang = 'en-US';
+  recognition.start();
+  final_span.innerHTML = '';
+  interim_span.innerHTML = '';
+}
+</script>
+
+
+   
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <script>
       function onSignIn(googleUser) {
@@ -35,5 +97,6 @@
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
       }
+      </script>
   </body>
 </html>
