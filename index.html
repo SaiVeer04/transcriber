@@ -1,20 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Speech Recognition</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
-  <!-- load font awesome here for icon used on the page -->
-</head>
-<body>
-  <div class="container"> <!--page container -->
-    <div class="text-box" contenteditable="true"></div> <!--text box which will contain spoken text -->
-    <i class="fa fa-microphone"></i> <!-- microphone icon to be clicked before speaking -->
-  </div>
-  <audio class="sound" src="chime.mp3"></audio> <!-- sound to be played when we click icon => http://soundbible.com/1598-Electronic-Chime.html -->
-  <script src="index.js"></script> <!-- link to index.js script -->
-</body>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
+      var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
+      var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
+
+      var colors = [ 'aqua' , 'azure' , 'beige', 'bisque', 'black', 'blue', 'brown', 'chocolate', 'coral' ... ];
+      var grammar = '#JSGF V1.0; grammar colors; public <color> = ' + colors.join(' | ') + ' ;'
+      var recognition = new SpeechRecognition();
+      var speechRecognitionList = new SpeechGrammarList();
+
+      speechRecognitionList.addFromString(grammar, 1);
+
+      recognition.grammars = speechRecognitionList;
+      //recognition.continuous = false;
+      recognition.lang = 'en-US';
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+
+      var diagnostic = document.querySelector('.output');
+      var bg = document.querySelector('html');
+      var hints = document.querySelector('.hints');
+
+      var colorHTML= '';
+      colors.forEach(function(color, index){
+        console.log(color, index);
+        colorHTML += '<span style="background-color:' + color + ';"> ' + color + ' </span>';
+      });
+      hints.innerHTML = 'Tap/click then say a color to change the background color of the app. Try '+ colorHTML + '.';
+
+      document.body.onclick = function() {
+        recognition.start();
+        console.log('Ready to receive a color command.');
+      }
+
+      recognition.onresult = function(event) {
+      var last = event.results.length - 1;
+      var color = event.results[last][0].transcript;
+      diagnostic.textContent = 'Result received: ' + color + '.';
+      bg.style.backgroundColor = color;
+      console.log('Confidence: ' + event.results[0][0].confidence);
+      }
+      recognition.onspeechend = function() {
+        recognition.stop();
+      }
 </html>
