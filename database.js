@@ -17,8 +17,6 @@ function onSignIn(googleUser) {
           //console.log("ID Token: " + id_token);
 }
 
-var database = firebase.database;
-
-database().ref('Notes_Database/Test').set({
+firebase.database().ref('Notes_Database/Test').set({
    user: "Me!"
 });
