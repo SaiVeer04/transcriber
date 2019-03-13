@@ -51,6 +51,8 @@ function startDictation(event) {
     recognition.stop();
     return;
   }
+ var button = document.createElement("button");
+  button.innerHTML = "Do Something";
   final_transcript = '';
   recognition.lang = 'en-US';
   recognition.start();
