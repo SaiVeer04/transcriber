@@ -24,13 +24,14 @@
   <body>
     <div>
   <a href="#" id="start_button" onclick="startDictation(event)">Dictate</a>
+  <a href="" id="start_button" onclick="onend(event)">Stop</a>
 </div>
 
 <div id="results">
   <span id="final_span" class="final"></span>
   <span id="interim_span" class="interim"></span>
 </div>
-    <a href="/" id="end_button" onclick="onend(event)"> End Dictate</a>
+    
     <script type="text/javascript" src="transcription.js"></script>
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <script type="text/javascript" src="database.js"></script>
