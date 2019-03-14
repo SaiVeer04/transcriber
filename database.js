@@ -21,10 +21,9 @@ function onSignIn(googleUser) {
 
 var playersRef = firebase.database().ref("players/");
 
-playersRef.set ({
-   John: {
-      number: 1,
-      age: 30
+users.set ({
+   user: {
+      Id: userID
    },
 	
    Amanda: {
