@@ -22,7 +22,7 @@ function onSignIn(googleUser) {
 var playersRef = firebase.database().ref("users/");
 
 playersRef.set ({
-   user: {
+   John: {
       Id: userID
    },
 	
