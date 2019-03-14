@@ -19,6 +19,7 @@ function onSignIn(googleUser) {
           //console.log("ID Token: " + id_token);
 	  
 }
+profile = googleUser.getBasicProfile();
 userID = profile.getId();
 console.log(userID + ' this is a new message!');
 
