@@ -52,7 +52,7 @@ function startDictation(event) {
     recognition.stop();
     return;
   }
-  saveButton.onclick = function(){
+  function save(){
     var saveas = final_span;
     console.log(saveas +"success");
   }
