@@ -53,8 +53,7 @@ function startDictation(event) {
     return;
   }
   saveButton.onClick = function(){
-    var saveas = final_span;
-    console.log(saveas +"success");
+     console.log("SUCCESS!");
   }
  var button = document.createElement("button");
   button.innerHTML = "Do Something";
