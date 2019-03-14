@@ -1,9 +1,9 @@
 var final_transcript = '';
 var recognizing = false;
-var stopButton = document.getElementById("stopButton");
+var save = document.getElementById("buttonSave");
 
-saveButton.onClick = function(){
-    console.log("SUCCESS!");
+save.onclick = function() {
+	console.log("CLICKED");
 }
 
 if ('webkitSpeechRecognition' in window) {
