@@ -1,5 +1,7 @@
 var profile;
 var userID;
+// Get a reference to the database service
+var database = firebase.database();
 
 function onSignIn(googleUser) {
           // Useful data for your client-side scripts:
@@ -15,4 +17,9 @@ function onSignIn(googleUser) {
           // The ID token you need to pass to your backend:
           //var id_token = googleUser.getAuthResponse().id_token;
           //console.log("ID Token: " + id_token);
+}
+function writeUserData(userId) {
+  firebase.database().ref('users/' + userId).set({
+   id: userId
+  });
 }
