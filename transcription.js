@@ -1,6 +1,6 @@
 var final_transcript = '';
 var recognizing = false;
-var saveButton = element.getElementByID('saveButton');
+var saveButton = element.getElementByID("saveButton");
 
 if ('webkitSpeechRecognition' in window) {
 
