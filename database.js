@@ -35,5 +35,5 @@ playersRef.set ({
 var johnRef = firebase.database().ref("players/John");
 
 johnRef.update ({
-   "number": userID
+   "number": 10
 });
