@@ -18,8 +18,17 @@ function onSignIn(googleUser) {
           //var id_token = googleUser.getAuthResponse().id_token;
           //console.log("ID Token: " + id_token);
 }
-function writeUserData(userId) {
-  firebase.database().ref('users/' + userId).set({
-   id: userId
-  });
-}
+
+var playersRef = firebase.database().ref("players/");
+
+playersRef.set ({
+   John: {
+      number: 1,
+      age: 30
+   },
+	
+   Amanda: {
+      number: 2,
+      age: 20
+   }
+});
