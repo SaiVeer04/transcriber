@@ -19,14 +19,14 @@ function onSignIn(googleUser) {
           //console.log("ID Token: " + id_token);
 	  
 }
-
+userID = profile.getId();
 console.log(userID + ' this is a new message!');
 
 var playersRef = firebase.database().ref("players/");
 
 playersRef.set ({
    John: {
-      number: profile.getId(),
+      number: userID
       age: 30
    },
 	
