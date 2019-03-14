@@ -1,5 +1,6 @@
 var final_transcript = '';
 var recognizing = false;
+var saveButton = element.getElementByID('saveButton');
 
 if ('webkitSpeechRecognition' in window) {
 
@@ -51,7 +52,7 @@ function startDictation(event) {
     recognition.stop();
     return;
   }
-  function save(){
+  saveButton.onclick = function(){
     var saveas = final_span;
     console.log(saveas +"success");
   }
