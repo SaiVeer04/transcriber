@@ -19,9 +19,9 @@ function onSignIn(googleUser) {
           //console.log("ID Token: " + id_token);
 }
 
-var users = firebase.database().ref("users/");
+var playersRef = firebase.database().ref("users/");
 
-users.set ({
+playersRef.set ({
    user: {
       Id: userID
    },
