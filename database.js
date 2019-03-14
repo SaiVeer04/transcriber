@@ -23,7 +23,8 @@ var playersRef = firebase.database().ref("players/");
 
 playersRef.set ({
    John: {
-      Id: userID
+      number: 1,
+      age: 30
    },
 	
    Amanda: {
