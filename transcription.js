@@ -2,10 +2,14 @@ var final_transcript = '';
 var recognizing = false;
 var stopButton = document.getElementById("stopButton");
 
+saveButton.onClick = function(){
+    console.log("SUCCESS!");
+}
+
 if ('webkitSpeechRecognition' in window) {
 
-  var recognition = new webkitSpeechRecognition();
-
+  var recognition = new webkitSpeechRecognition()
+  
   recognition.continuous = true;
   recognition.interimResults = true;
 
@@ -52,9 +56,7 @@ function startDictation(event) {
     recognition.stop();
     return;
   }
-  saveButton.onClick = function(){
-     console.log("SUCCESS!");
-  }
+
  var button = document.createElement("button");
   button.innerHTML = "Do Something";
   final_transcript = '';
