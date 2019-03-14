@@ -3,7 +3,13 @@ var recognizing = false;
 var save = document.getElementById("buttonSave");
 
 save.onclick = function() {
-	console.log("CLICKED");
+	var print = '';
+	if (final_transcript = '') {
+		print = 'Pressed but no transcription';
+	} else {
+		print = 'Final Transcript Loaded: ' + final_transcript;
+	}
+	console.log(print);
 }
 
 if ('webkitSpeechRecognition' in window) {
