@@ -51,6 +51,10 @@ function startDictation(event) {
     recognition.stop();
     return;
   }
+  function save(){
+    var saveas = final_span;
+    console.log(saveas +"success");
+  }
  var button = document.createElement("button");
   button.innerHTML = "Do Something";
   final_transcript = '';
