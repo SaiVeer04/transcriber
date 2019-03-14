@@ -21,7 +21,7 @@ function onSignIn(googleUser) {
 
 var playersRef = firebase.database().ref("players/");
 
-playersRef.set ({
+playersRef.update ({
    John: {
       Id: userID
    },
