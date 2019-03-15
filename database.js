@@ -36,8 +36,9 @@ playersRef.set ({
       age: 20
    }
 });
-var johnRef = firebase.database().ref("players/John");
+/*var johnRef = firebase.database().ref("players/John");
 
 johnRef.update ({
    "age": 10
-});
+});*/
+
