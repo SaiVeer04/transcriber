@@ -34,19 +34,7 @@ function onSignIn(googleUser) {
 }
 
 
-var playersRef = firebase.database().ref("players/");
 
-playersRef.set ({
-   John: {
-      number: userID,
-      age: 30
-   },
-	
-   Amanda: {
-      number: 2,
-      age: 20
-   }
-});
 /*var johnRef = firebase.database().ref("players/John");
 
 johnRef.update ({
