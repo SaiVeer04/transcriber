@@ -17,17 +17,12 @@ function onSignIn(googleUser) {
           // The ID token you need to pass to your backend:
           //var id_token = googleUser.getAuthResponse().id_token;
           //console.log("ID Token: " + id_token);
-	var playersRef = firebase.database().ref("players/");
+	var users = firebase.database().ref("users/");
 
-	playersRef.set ({
-	   John: {
-	      number: userID,
+	users.set ({
+	   userID: {
+	      transcript: "test",
 	      age: 30
-	   },
-
-	   Amanda: {
-	      number: 2,
-	      age: 20
 	   }
 	});
 
