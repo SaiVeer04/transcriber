@@ -30,12 +30,3 @@ function onSignIn(googleUser) {
 	});
 
 }
-
-
-
-/*var johnRef = firebase.database().ref("players/John");
-
-johnRef.update ({
-   "age": 10
-});*/
-
