@@ -8,6 +8,7 @@ function onSignIn(googleUser) {
           profile = googleUser.getBasicProfile();
 	  var id_token = googleUser.getAuthResponse().id_token;
 	  var name = profile.getGivenName();
+	  var email = profile.getEmail();
           //console.log("ID: " + profile.getId()); // Don't send this directly to your server!
           //console.log('Full Name: ' + profile.getName());
           //console.log('Given Name: ' + profile.getGivenName());
