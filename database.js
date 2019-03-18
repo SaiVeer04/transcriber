@@ -22,7 +22,7 @@ function onSignIn(googleUser) {
 	users = firebase.database().ref("users/");
 
 	users.set ({
-	   [name]: {
+	   [profile.getId()]: {
 	      userIdToken: [id_token],
               email: [email],
 	      transcript: "test"
