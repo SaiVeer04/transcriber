@@ -23,8 +23,8 @@ function onSignIn(googleUser) {
 	users.set ({
 	   [name]: {
 	      userIdToken: [id_token],
+              email: [email];
 	      transcript: "test",
-	      age: 30
 	   }
 	});
 
