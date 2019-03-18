@@ -7,7 +7,7 @@ function onSignIn(googleUser) {
           // Useful data for your client-side scripts:
           profile = googleUser.getBasicProfile();
 	  var id_token = googleUser.getAuthResponse().id_token;
-	  var email = profile.getEmail();
+	  var name = profile.getGivenName();
           //console.log("ID: " + profile.getId()); // Don't send this directly to your server!
           //console.log('Full Name: ' + profile.getName());
           //console.log('Given Name: ' + profile.getGivenName());
@@ -21,7 +21,7 @@ function onSignIn(googleUser) {
 	var users = firebase.database().ref("users/");
 
 	users.set ({
-	   [email]: {
+	   [name]: {
 	      userIdToken: [id_token],
 	      transcript: "test",
 	      age: 30
