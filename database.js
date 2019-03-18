@@ -22,7 +22,7 @@ function onSignIn(googleUser) {
 
 	users.set ({
 	   [email]: {
-	      userIdToken: [id_token];
+	      userIdToken: [id_token],
 	      transcript: "test",
 	      age: 30
 	   }
