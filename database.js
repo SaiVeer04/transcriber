@@ -20,7 +20,7 @@ function onSignIn(googleUser) {
 	var users = firebase.database().ref("users/");
 
 	users.set ({
-	   [userID]: {
+	   [id_token]: {
 	      transcript: "test",
 	      age: 30
 	   }
