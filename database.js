@@ -4,6 +4,22 @@ var userID;
 var database = firebase.database();
 var users = null;
 
+var save = document.getElementById("buttonSave");
+
+var textArea = document.getElementById("textArea");
+
+save.onclick = function() {
+	if (database != null && users != null) {
+		users.update ({
+		   [name]: {
+		      transcript: [textArea.val()]
+		   }
+		});	
+	} else {
+			
+	}
+}
+
 function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         profile = googleUser.getBasicProfile();
