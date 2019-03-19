@@ -1,10 +1,6 @@
 var final_transcript = '';
 var recognizing = false;
-var save = document.getElementById("buttonSave");
 
-save.onclick = function() {
-	console.log('Final Transcript Loaded: ' + final_transcript);
-}
 
 if ('webkitSpeechRecognition' in window) {
 
