@@ -6,7 +6,7 @@ var users = null;
 
 var save = document.getElementById("buttonSave");
 
-var textArea = document.getElementById("textArea");
+var textArea = document.getElementById("noteInput");
 
 save.onclick = function() {
 	if (database != null && users != null) {
