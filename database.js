@@ -19,10 +19,10 @@ function onSignIn(googleUser) {
 
         // The ID token you need to pass to your backend:
         //var id_token = googleUser.getAuthResponse().id_token;
-	users = firebase.database().ref("users/" + profile.getId());
+	users = firebase.database().ref("users/");
 
-	users.set ({
-	   info: {
+	users.update ({
+	   [name]: {
 	      userIdToken: [id_token],
               email: [email],
 	      transcript: "test"
