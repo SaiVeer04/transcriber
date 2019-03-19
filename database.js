@@ -6,13 +6,11 @@ var users = null;
 
 var save = document.getElementById("buttonSave");
 
-var textArea = document.getElementById("noteInput");
-
 save.onclick = function() {
 	if (database != null && users != null) {
 		users.update ({
 		   [name]: {
-		      transcript: [textArea.val()]
+		      transcript: [$("inputArea").val()]
 		   }
 		});	
 	} else {
