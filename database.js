@@ -10,7 +10,7 @@ save.onclick = function() {
 	if (database != null && users != null) {
 		users.update ({
 		   [name]: {
-		      transcript: [textarea.val()]
+		      transcript: [textarea.value]
 		   }
 		});	
 	} else {
