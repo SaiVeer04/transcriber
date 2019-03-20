@@ -43,7 +43,7 @@ function onSignIn(googleUser) {
 	   [givenname]: {
 	      userIdToken: [id_token],
               email: [email],
-	      transcript: {}
+	      transcript: [givenname]
 	   }
 	});
 
