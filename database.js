@@ -4,6 +4,7 @@ var userID;
 var database = firebase.database();
 var users = null;
 var textarea = document.getElementById("noteInput");
+var titlearea = document.getElementById("titleText");
 var save = document.getElementById("buttonSave");
 var givenname = null;
 
@@ -12,7 +13,9 @@ save.onclick = function() {
 		alert("Saving...");
 		alert("Saved to: " + givenname);
 		firebase.database().ref("users/" + givenname).update ({
-		    transcript: [textarea.value]
+		    [titlearea]: {
+			transcript: [textarea.value]
+		    }
 		});	
 	} else {
 		alert("Please sign in before you try to save!");	
