@@ -22,6 +22,10 @@
     </script>
   </head>
   <body>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>\
+    <br>
+    <br>
+    <br>
     <div>
       <a href="#" id="start_button" onclick="startDictation(event)">Dictate</a>
       <a href="https://saiveer04.github.io/transcriber/" id="end_button" onclick="onend(event)">Stop</a>
@@ -33,9 +37,10 @@
     </div>
     
     <button id = "buttonSave">Button Press</button>
-    <textarea id = "noteInput" col=50 row=4> Enter Notes Here</textarea>
+    <br>
+    <br>
+    <textarea id = "noteInput" col=50 row=4>Enter Notes Here</textarea>
     <script type="text/javascript" src="transcription.js"></script>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <script type="text/javascript" src="database.js"></script>    
   </body>
 </html>
