@@ -11,7 +11,7 @@ save.onclick = function() {
 		alert("Saving...");
 		alert("Saved to: " + name);
 		users.update ({
-		   [name]: {
+		   [userName]: {
 		      transcript: [textarea.value]
 		   }
 		});	
@@ -24,7 +24,7 @@ function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         profile = googleUser.getBasicProfile();
 	var id_token = googleUser.getAuthResponse().id_token;
-        var name = profile.getGivenName();
+        var userName = profile.getGivenName();
 	var email = profile.getEmail();
         //console.log("ID: " + profile.getId()); // Don't send this directly to your server!
         //console.log('Full Name: ' + profile.getName());
@@ -38,7 +38,7 @@ function onSignIn(googleUser) {
 	users = firebase.database().ref("users/");
 
 	users.update ({
-	   [name]: {
+	   [userName]: {
 	      userIdToken: [id_token],
               email: [email],
 	      transcript: "test"
