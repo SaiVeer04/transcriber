@@ -5,13 +5,14 @@ var database = firebase.database();
 var users = null;
 var textarea = document.getElementById("noteInput");
 var save = document.getElementById("buttonSave");
+var givenname = null;
 
 save.onclick = function() {
 	if (database != null && users != null) {
 		alert("Saving...");
-		alert("Saved to: " + userName);
+		alert("Saved to: " + givenname);
 		users.update ({
-		   [userName]: {
+		   [givenname]: {
 		      transcript: [textarea.value]
 		   }
 		});	
@@ -24,7 +25,7 @@ function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         profile = googleUser.getBasicProfile();
 	var id_token = googleUser.getAuthResponse().id_token;
-        var userName = profile.getGivenName();
+        givenname = profile.getGivenName();
 	var email = profile.getEmail();
         //console.log("ID: " + profile.getId()); // Don't send this directly to your server!
         //console.log('Full Name: ' + profile.getName());
@@ -38,7 +39,7 @@ function onSignIn(googleUser) {
 	users = firebase.database().ref("users/");
 
 	users.update ({
-	   [userName]: {
+	   [givenname]: {
 	      userIdToken: [id_token],
               email: [email],
 	      transcript: "test"
