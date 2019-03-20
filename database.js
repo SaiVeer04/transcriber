@@ -14,7 +14,7 @@ save.onclick = function() {
 		   }
 		});	
 	} else {
-			
+		alert("Please sign in before you try to save!");	
 	}
 }
 
