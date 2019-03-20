@@ -9,6 +9,7 @@ var save = document.getElementById("buttonSave");
 save.onclick = function() {
 	if (database != null && users != null) {
 		alert("Saving...");
+		alert("Saved to: " + name);
 		users.update ({
 		   [name]: {
 		      transcript: [textarea.value]
