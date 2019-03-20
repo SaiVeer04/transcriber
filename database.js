@@ -14,7 +14,7 @@ save.onclick = function() {
 		alert("Saved to: " + givenname);
 		firebase.database().ref("users/" + givenname + "/transcript").update ({
 		    [titlearea.value]: {
-			: [textarea.value]
+			text: [textarea.value]
 		    }
 		});	
 	} else {
