@@ -11,10 +11,8 @@ save.onclick = function() {
 	if (database != null && users != null) {
 		alert("Saving...");
 		alert("Saved to: " + givenname);
-		users.update ({
-		   [givenname]: {
-		      transcript: [textarea.value]
-		   }
+		firebase.database().ref("users/" + givenname).update ({
+		    transcript: [textarea.value]
 		});	
 	} else {
 		alert("Please sign in before you try to save!");	
