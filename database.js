@@ -3,14 +3,14 @@ var userID;
 // Get a reference to the database service
 var database = firebase.database();
 var users = null;
-
+var textarea = document.getElementById("noteInput");
 var save = document.getElementById("buttonSave");
 
 save.onclick = function() {
 	if (database != null && users != null) {
 		users.update ({
 		   [name]: {
-		      transcript: [$("inputArea").val()]
+		      transcript: [textarea.val()]
 		   }
 		});	
 	} else {
