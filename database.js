@@ -11,7 +11,7 @@ var givenname = null;
 save.onclick = function() {
 	if (database != null && users != null && !titlearea.value.includes("/")) {
 		firebase.database().ref("users/" + givenname + "/transcript").update ({
-		    [titleOfText]: {
+		    [titleArea.value]: {
 			text: [textarea.value]
 		    }
 		});	
