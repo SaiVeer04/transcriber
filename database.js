@@ -6,6 +6,7 @@ var users = null;
 var textarea = document.getElementById("noteInput");
 var titlearea = document.getElementById("titleText");
 var save = document.getElementById("buttonSave");
+var load = document.getElementById("buttonLoad");
 var givenname = null;
 
 save.onclick = function() {
@@ -19,6 +20,14 @@ save.onclick = function() {
 		alert("The title of your document may not contain a slash, please remove them and try again...");
 	} else {
 		alert("Please sign in before you try to save!");	
+	}
+}
+
+load.onclick = function() {
+	if (database != null && user != null) {
+		// Load data from the drop-down menu selected database.
+	} else {
+		alert("Please sign-in before loading your saves!");	
 	}
 }
 
