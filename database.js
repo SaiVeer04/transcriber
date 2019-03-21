@@ -15,7 +15,7 @@ save.onclick = function() {
 			text: [textarea.value]
 		    }
 		});	
-	} else if (titlearea.value.includes("/") { 
+	} else if (titlearea.value.includes("/")) { 
 		alert("The title of your document may not contain a slash, please remove them and try again...");
 	} else {
 		alert("Please sign in before you try to save!");	
