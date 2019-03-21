@@ -9,17 +9,14 @@ var save = document.getElementById("buttonSave");
 var givenname = null;
 
 save.onclick = function() {
-	if (database != null && users != null) {
-		alert("Saving...");
-		alert("Saved to: " + givenname);
-		
-		var titleOfText = "'" + titlearea.value + "'";
-		
+	if (database != null && users != null && !titlearea.value.includes("/")) {
 		firebase.database().ref("users/" + givenname + "/transcript").update ({
 		    [titleOfText]: {
 			text: [textarea.value]
 		    }
 		});	
+	} else if (titlearea.value.includes("/") { 
+		alert("The title of your document may not contain a slash, please remove them and try again...");
 	} else {
 		alert("Please sign in before you try to save!");	
 	}
