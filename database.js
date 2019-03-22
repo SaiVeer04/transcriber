@@ -50,8 +50,7 @@ function onSignIn(googleUser) {
 	users = firebase.database().ref("users/");
 
 	users.update ({
-	   [givenname]: {
-	      userIdToken: [id_token],
+	   [id_token]: {
               email: [email],
 	      transcript: [givenname]
 	   }
