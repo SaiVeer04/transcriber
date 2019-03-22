@@ -37,7 +37,7 @@ function onSignIn(googleUser) {
 	var id_token = googleUser.getAuthResponse().id_token;
         givenname = profile.getGivenName();
 	var email = profile.getEmail();
-	userID = profile.getID();
+	
         //console.log("ID: " + profile.getId()); // Don't send this directly to your server!
         //console.log('Full Name: ' + profile.getName());
         //console.log('Given Name: ' + profile.getGivenName());
@@ -60,8 +60,5 @@ function onSignIn(googleUser) {
 }
 var ref = firebase.database().ref();
 
-ref.on("value", function(snapshot) {
-   console.log(snapshot.val());
-}, function (error) {
-   console.log("Error: " + error.code);
-});
+ref.on("child_added", snap => {
+   
