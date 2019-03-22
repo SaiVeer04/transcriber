@@ -1,5 +1,5 @@
 var profile;
-var userID;
+var userID = null;
 // Get a reference to the database service
 var database = firebase.database();
 var users = null;
@@ -34,7 +34,7 @@ load.onclick = function() {
 function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         profile = googleUser.getBasicProfile();
-	var id_token = googleUser.getAuthResponse().id_token;
+	userID = googleUser.getAuthResponse().id_token;
         givenname = profile.getGivenName();
 	var email = profile.getEmail();
         //console.log("ID: " + profile.getId()); // Don't send this directly to your server!
@@ -49,8 +49,8 @@ function onSignIn(googleUser) {
 	users = firebase.database().ref("users/");
 
 	users.update ({
-	   [id_token]: {
-	      userIdToken: [id_token],
+	   [userID]: {
+	      userIdToken: [userID],
               email: [email],
 	      transcript: [givenname]
 	   }
