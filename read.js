@@ -1,3 +1,4 @@
+var table = document.getElementById("test");
 function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
 	
@@ -32,7 +33,7 @@ function onSignIn(googleUser) {
 	ref.on("child_added", snap => {
          var userid = snap.child("id").val();
          console.log("test");
- 	 var document.getElementById('test').innerHTML = userid;
+ 	 table.innerHTML = userid;
          });
 	
 	/*var ref = firebase.database().ref().child("users/" + id);
