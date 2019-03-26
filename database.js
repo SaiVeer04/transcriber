@@ -14,7 +14,7 @@ var id = null;
 
 save.onclick = function() {
 	if (database != null && users != null && !titlearea.value.includes("/")) {
-		firebase.database().ref("users/" + id).update ({
+		firebase.database().ref("users/" + id + "/trans/").update ({
 		    [titlearea.value]: {
 			text: [textarea.value]
 		    }
