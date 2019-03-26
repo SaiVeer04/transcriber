@@ -10,10 +10,11 @@ var load = document.getElementById("buttonLoad");
 var givenname = null;
 var id_token = null;
 var email = null;
+var id = null;
 
 save.onclick = function() {
 	if (database != null && users != null && !titlearea.value.includes("/")) {
-		firebase.database().ref("users/" + email).update ({
+		firebase.database().ref("users/" + id).update ({
 		    [titlearea.value]: {
 			text: [textarea.value]
 		    }
@@ -39,6 +40,7 @@ function onSignIn(googleUser) {
 	id_token = googleUser.getAuthResponse().id_token;
         givenname = profile.getGivenName();
 	email = profile.getEmail();
+	id = profile.getId();
 	
         //console.log("ID: " + profile.getId()); // Don't send this directly to your server!
         //console.log('Full Name: ' + profile.getName());
@@ -52,7 +54,7 @@ function onSignIn(googleUser) {
 	users = firebase.database().ref("users/");
 
 	users.set({
-	   [email]: {
+	   [id]: {
               id_token: [id_token],
 	      user: givenname
 	   }
