@@ -12,7 +12,7 @@ var id_token = null;
 
 save.onclick = function() {
 	if (database != null && users != null && !titlearea.value.includes("/")) {
-		firebase.database().ref("users/" + id_token + "/transcript").update ({
+		firebase.database().ref("users/" + id_token).update ({
 		    [titlearea.value]: {
 			text: [textarea.value]
 		    }
@@ -53,7 +53,7 @@ function onSignIn(googleUser) {
 	users.update({
 	   [id_token]: {
               email: [email],
-	      transcript: [givenname]
+	      user: givenname
 	   }
 	});
 }
