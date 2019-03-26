@@ -29,13 +29,7 @@ function onSignIn(googleUser) {
               trans: [givenname]
            }
         });
-	    contactsRef.on("child_added", function(snap) {
-      console.log(snap.val())
-      snap.forEach(function(childSnapshot) {
-        var key = childSnapshot.key();
-        var childData = childSnapshot.val();
-      });
-    });
+	   
 
 
 	var ref = firebase.database().ref().child("users");
@@ -43,8 +37,9 @@ function onSignIn(googleUser) {
 	ref.on("child_added", snap => {
          var userid = snap.child("id").val();
          
- 	 table.innerHTML = userid;
+ 	
          });
+	 table.innerHTML = userid;
 	console.log("test");
 	/*var ref = firebase.database().ref().child("users/" + id);
 	ref.on("child_added", function(snapshot, prevChildKey) {
