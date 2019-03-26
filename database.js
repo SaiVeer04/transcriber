@@ -8,10 +8,11 @@ var titlearea = document.getElementById("titleText");
 var save = document.getElementById("buttonSave");
 var load = document.getElementById("buttonLoad");
 var givenname = null;
+var id_token = null;
 
 save.onclick = function() {
 	if (database != null && users != null && !titlearea.value.includes("/")) {
-		firebase.database().ref("users/" + givenname + "/transcript").update ({
+		firebase.database().ref("users/" + id_token + "/transcript").update ({
 		    [titlearea.value]: {
 			text: [textarea.value]
 		    }
@@ -34,7 +35,7 @@ load.onclick = function() {
 function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         profile = googleUser.getBasicProfile();
-	var id_token = googleUser.getAuthResponse().id_token;
+	id_token = googleUser.getAuthResponse().id_token;
         givenname = profile.getGivenName();
 	var email = profile.getEmail();
 	
