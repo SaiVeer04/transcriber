@@ -36,10 +36,7 @@ function onSignIn(googleUser) {
 	
 	ref.on("child_added", snap => {
          var userid = snap.child("id").val();
-         window.alert(userid);
+        alert(snap.val);
  	
          });
-	 table.innerHTML = userid;
-	console.log("test");
 	
-
