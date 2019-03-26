@@ -1,6 +1,6 @@
 var final_transcript = '';
 var recognizing = false;
-var notes = getElementById("noteInput");
+var notes = document.getElementById("noteInput");
 
 if ('webkitSpeechRecognition' in window) {
 
