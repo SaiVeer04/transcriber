@@ -57,7 +57,8 @@ function onSignIn(googleUser) {
 	users.update({
 	   [id]: {
               id_token: [id_token],
-	      user: givenname
+	      user: givenname,
+	      trans: [givenname]
 	   }
 	});
 }
