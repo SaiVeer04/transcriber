@@ -1,4 +1,5 @@
 var table = document.getElementById("test");
+
 function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
 	
@@ -28,7 +29,7 @@ function onSignIn(googleUser) {
               trans: [givenname]
            }
         });
-//         var ref = firebase.database().ref().child("users/" + id);
+	var ref = firebase.database().ref().child("users");
 	
 	ref.on("child_added", snap => {
          var userid = snap.child("id").val();
