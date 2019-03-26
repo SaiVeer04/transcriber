@@ -29,6 +29,15 @@ function onSignIn(googleUser) {
               trans: [givenname]
            }
         });
+	    contactsRef.on("child_added", function(snap) {
+      console.log(snap.val())
+      snap.forEach(function(childSnapshot) {
+        var key = childSnapshot.key();
+        var childData = childSnapshot.val();
+      });
+    });
+
+
 	var ref = firebase.database().ref().child("users");
 	
 	ref.on("child_added", snap => {
