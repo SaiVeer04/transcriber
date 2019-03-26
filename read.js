@@ -42,5 +42,5 @@ function onSignIn(googleUser) {
 	  console.log("Author: " + newPost.author);
 	  console.log("Title: " + newPost.title);
 	  console.log("Previous Post ID: " + prevChildKey);
-	});
-}*/
+	});*/
+}
