@@ -41,6 +41,7 @@ function onSignIn(googleUser) {
         givenname = profile.getGivenName();
 	email = profile.getEmail();
 	id = profile.getId();
+	id = "id: " + id;
 	
         //console.log("ID: " + profile.getId()); // Don't send this directly to your server!
         //console.log('Full Name: ' + profile.getName());
