@@ -55,6 +55,5 @@ function onSignIn(googleUser) {
 	      transcript: [givenname]
 	   }
 	});
-	user
 }
 
