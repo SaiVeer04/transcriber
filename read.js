@@ -35,11 +35,11 @@ function onSignIn(googleUser) {
  	 var document.getElementById('test').innerHTML = userid;
          });
 	
-	var ref = firebase.database().ref().child("users/" + id);
+	/*var ref = firebase.database().ref().child("users/" + id);
 	ref.on("child_added", function(snapshot, prevChildKey) {
 	  var newPost = snapshot.val();
 	  console.log("Author: " + newPost.author);
 	  console.log("Title: " + newPost.title);
 	  console.log("Previous Post ID: " + prevChildKey);
 	});
-}
+}*/
