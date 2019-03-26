@@ -1,4 +1,4 @@
-function onSignInRead(googleUser) {
+function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
 	
         profile = googleUser.getBasicProfile();
@@ -6,7 +6,6 @@ function onSignInRead(googleUser) {
         givenname = profile.getGivenName();
         email = profile.getEmail();
         id = profile.getId();
-	alert("Signed In: " + id);
 	id = "id: " + id;
 	
 	
