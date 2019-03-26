@@ -1,6 +1,6 @@
 var final_transcript = '';
 var recognizing = false;
-
+var notes = getElementById("noteInput");
 
 if ('webkitSpeechRecognition' in window) {
 
@@ -22,17 +22,18 @@ if ('webkitSpeechRecognition' in window) {
   };
 
   recognition.onresult = function(event) {
-    var interim_transcript = '';
+    //var interim_transcript = '';
     for (var i = event.resultIndex; i < event.results.length; ++i) {
-      if (event.results[i].isFinal) {
-        final_transcript += event.results[i][0].transcript;
-      } else {
-        interim_transcript += event.results[i][0].transcript;
-      }
+      //if (event.results[i].isFinal) {
+        //final_transcript += event.results[i][0].transcript;
+        notes.innerHTML += capitalize(event.results[i][0].transcript);
+      //} else {
+        //interim_transcript += event.results[i][0].transcript;
+      //}
     }
-    final_transcript = capitalize(final_transcript);
-    final_span.innerHTML = linebreak(final_transcript);
-    interim_span.innerHTML = linebreak(interim_transcript);
+    //final_transcript = capitalize(final_transcript);
+    //final_span.innerHTML = linebreak(final_transcript);
+    //interim_span.innerHTML = linebreak(interim_transcript);
     
   };
 }
