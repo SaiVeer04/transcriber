@@ -1,12 +1,15 @@
-function onSignIn(googleUser) {
+function onSignInRead(googleUser) {
         // Useful data for your client-side scripts:
+	
         profile = googleUser.getBasicProfile();
 	      id_token = googleUser.getAuthResponse().id_token;
         givenname = profile.getGivenName();
         email = profile.getEmail();
         id = profile.getId();
-        id = "id: " + id;
-
+	alert("Signed In: " + id);
+	id = "id: " + id;
+	
+	
               //console.log("ID: " + profile.getId()); // Don't send this directly to your server!
               //console.log('Full Name: ' + profile.getName());
               //console.log('Given Name: ' + profile.getGivenName());
