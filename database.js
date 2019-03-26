@@ -9,10 +9,11 @@ var save = document.getElementById("buttonSave");
 var load = document.getElementById("buttonLoad");
 var givenname = null;
 var id_token = null;
+var email = null;
 
 save.onclick = function() {
 	if (database != null && users != null && !titlearea.value.includes("/")) {
-		firebase.database().ref("users/" + id_token).update ({
+		firebase.database().ref("users/" + email).update ({
 		    [titlearea.value]: {
 			text: [textarea.value]
 		    }
@@ -37,7 +38,7 @@ function onSignIn(googleUser) {
         profile = googleUser.getBasicProfile();
 	id_token = googleUser.getAuthResponse().id_token;
         givenname = profile.getGivenName();
-	var email = profile.getEmail();
+	email = profile.getEmail();
 	
         //console.log("ID: " + profile.getId()); // Don't send this directly to your server!
         //console.log('Full Name: ' + profile.getName());
@@ -51,8 +52,8 @@ function onSignIn(googleUser) {
 	users = firebase.database().ref("users/");
 
 	users.set({
-	   [id_token]: {
-              email: [email],
+	   [email]: {
+              id_token: [id_token],
 	      user: givenname
 	   }
 	});
