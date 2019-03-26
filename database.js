@@ -54,7 +54,7 @@ function onSignIn(googleUser) {
         //var id_token = googleUser.getAuthResponse().id_token;
 	users = firebase.database().ref("users/");
 
-	users.set({
+	users.update({
 	   [id]: {
               id_token: [id_token],
 	      user: givenname
