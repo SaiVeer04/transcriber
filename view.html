@@ -1,7 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="54935462861-sedlkvk3ufqujgpo2hmevectur8p4o2u.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+    <script>
+      // https://www.gstatic.com/firebasejs/5.0.0/firebase-<PACKAGE>.js
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyB9p1VvVfhnbrcDwUKUuSqw9aQsqnDi4nQ",
+        authDomain: "html5project-870df.firebaseapp.com",
+        databaseURL: "https://html5project-870df.firebaseio.com",
+        projectId: "html5project-870df",
+        storageBucket: "html5project-870df.appspot.com",
+        messagingSenderId: "54935462861"
+      };
+      firebase.initializeApp(config);
+    </script>
     <h1>View your Trancriptions</h1>
 
     <link href="style.css" rel="stylesheet" type="text/css" />
