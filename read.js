@@ -28,8 +28,8 @@ function onSignIn(googleUser) {
            }
         });
         var ref = firebase.database().ref().child("users/");
-
-        ref.on("child_added", snap => {
+	
+	ref.on("child_added", snap => {
         var userid = snap.child("id").val();
         console.log("test");
 	document.getElementById('test').innerHTML = userid;
