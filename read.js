@@ -30,8 +30,8 @@ function onSignIn(googleUser) {
         var ref = firebase.database().ref().child("users/").child(id);
 
         ref.on("child_added", snap => {
-        var name = snap.child("0").val();
+        var userid = snap.child("id").val();
         console.log(id);
-	document.getElementById('test').innerHTML = ;
+	document.getElementById('test').innerHTML = userid;
         });
 }
