@@ -29,11 +29,11 @@ function onSignIn(googleUser) {
         });
 //         var ref = firebase.database().ref().child("users/" + id);
 	
-// 	ref.on("child_added", snap => {
-//         var userid = snap.child("id").val();
-//         console.log("test");
-// 	document.getElementById('test').innerHTML = userid;
-//         });
+	ref.on("child_added", snap => {
+         var userid = snap.child("id").val();
+         console.log("test");
+ 	 var document.getElementById('test').innerHTML = userid;
+         });
 	
 	var ref = firebase.database().ref().child("users/" + id);
 	ref.on("child_added", function(snapshot, prevChildKey) {
