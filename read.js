@@ -13,6 +13,7 @@ if (!firebase.apps.length) {
     firebase.initializeApp({});
 }
 var database = firebase.database();
+	
 var Rootref = database.ref().child("users/id: 104356485002796982585");
 	
 Rootref.on("child_added", snap => { 
