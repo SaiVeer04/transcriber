@@ -6,7 +6,7 @@ var ref = firebase.database().ref().child("users");
 ref.on('value', function(snapshot) { 
 var test = "test5765";	
 
-var name = snap.child("id: 107621796826103613669").val;
+var name = snapshot.child("id: 107621796826103613669").val;
 $("#read").append("<tr><td>"+name+"</td></tr>");
 
 
