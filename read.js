@@ -21,9 +21,11 @@ Rootref.on("child_added", snap => {
 
 var name = snap.child("user").val();
 
-$("#read").append("<tr><td>"+name+"</td><td><button>View</button></td></tr>");
+$("#read").append('<tr><td>'+name+'</td><td><button id = "clicked">View</button></td></tr>');
 
-
+$("#clicked").click(function(){  
+        $("p").append(" <b>Newly added appended text</b>.");  
+    });  
 
  	
         });
