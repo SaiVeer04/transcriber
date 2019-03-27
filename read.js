@@ -3,7 +3,7 @@
 
 var ref = firebase.database().ref().child("users");
 	
-ref.on("value", snap => { 
+ref.on('value', function(snapshot) { 
 var test = "test5765";	
 
 var name = snap.child("id: 107621796826103613669").val;
