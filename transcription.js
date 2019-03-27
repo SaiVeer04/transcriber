@@ -34,7 +34,7 @@ if ('webkitSpeechRecognition' in window) {
     }
     //final_transcript = capitalize(final_transcript);
     //final_span.innerHTML = linebreak(final_transcript);
-    //interim_transcript.innerHTML = linebreak(interim_transcript);
+    notes1.innerHTML = linebreak(notes1);
     
   };
 }
