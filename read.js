@@ -14,12 +14,12 @@ if (!firebase.apps.length) {
 }
 var database = firebase.database();
 	
-var Rootref = database.ref().child("users/id: 104356485002796982585");
+var Rootref = database.ref().child("users");
 	
 Rootref.on("child_added", snap => { 
 
 
-var name = snap.child("trans").val();
+var name = snap.child("name").val();
 
 $("#read").append("<tr><td>"+name+"</td><td><button>View</button></td></tr>");
 
