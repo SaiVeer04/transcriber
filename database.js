@@ -53,14 +53,17 @@ function onSignIn(googleUser) {
 
         // The ID token you need to pass to your backend:
         //var id_token = googleUser.getAuthResponse().id_token;
+	/var firebaseRef = firebase.database().ref();
+	
 	users = firebase.database().ref("users/");
-
+	users.child("UID").set(id);
+	/*
 	users.update({
 	   id:[id] {
               id_token: [id_token],
 	      user: givenname,
 	      trans: [givenname]
 	   }
-	});
+	});*/
 }
 
