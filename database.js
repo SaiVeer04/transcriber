@@ -56,7 +56,7 @@ function onSignIn(googleUser) {
 	//var firebaseRef = firebase.database().ref();
 	
 	users = firebase.database().ref("users/");
-	users.child("UID").set(id);
+	users.child("UID").update(id);
 	/*
 	users.update({
 	   id:[id] {
