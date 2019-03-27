@@ -1,6 +1,7 @@
 var final_transcript = '';
 var recognizing = false;
 var notes = document.getElementById("noteInput");
+var notes1 = document.getElementById("noteInput");
 
 if ('webkitSpeechRecognition' in window) {
 
@@ -28,12 +29,12 @@ if ('webkitSpeechRecognition' in window) {
         //final_transcript += event.results[i][0].transcript;
         notes.innerHTML += capitalize(event.results[i][0].transcript);
       } else {
-        interim_transcript += event.results[i][0].transcript;
+        notes1.innerHTML += event.results[i][0].transcript;
       }
     }
     //final_transcript = capitalize(final_transcript);
     //final_span.innerHTML = linebreak(final_transcript);
-    interim_span.innerHTML = linebreak(interim_transcript);
+    //interim_transcript.innerHTML = linebreak(interim_transcript);
     
   };
 }
