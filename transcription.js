@@ -28,13 +28,11 @@ if ('webkitSpeechRecognition' in window) {
       if (event.results[i].isFinal) {
         //final_transcript += event.results[i][0].transcript;
         notes.innerHTML += capitalize(event.results[i][0].transcript);
-      } else {
-        notes1.innerHTML += event.results[i][0].transcript;
       }
     }
     //final_transcript = capitalize(final_transcript);
     //final_span.innerHTML = linebreak(final_transcript);
-    notes1.innerHTML = linebreak(notes1);
+    notes1.innerHTML = linebreak(notes1.innerHTML);
     
   };
 }
