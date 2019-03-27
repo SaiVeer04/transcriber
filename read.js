@@ -5,7 +5,7 @@ var ref = firebase.database().ref().child("users");
 	
 ref.on("child_added", snap => { 
 var test = "test5765";	
-var name = snap.child("id_token").val;
+var name = snap.child("0:").val;
 $("#read").append("<tr><td>"+name+"</td></tr>");
 
  	
