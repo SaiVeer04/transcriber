@@ -13,7 +13,7 @@ if (!firebase.apps.length) {
 var database = firebase.database();
 var ref = database.ref().child("users");
 	
-ref.on('value', snap => { 
+ref.on('child_added', snap => { 
 var test = "test5765";	
 
 var name = snap.child("user").val;
