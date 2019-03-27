@@ -16,9 +16,9 @@ var database = firebase.database();
 var Rootref = database.ref().child("users");
 	
 Rootref.on("child_added", snap => { 
-var test = "test5765";	
 
-var name = snap.child("user").val();
+
+var name = snap.child("trans").val();
 
 $("#read").append("<tr><td>"+name+"</td><td><button>View</button></td></tr>");
 
