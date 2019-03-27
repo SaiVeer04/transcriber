@@ -42,7 +42,7 @@ function onSignIn(googleUser) {
         givenname = profile.getGivenName();
 	email = profile.getEmail();
 	id = profile.getId();
-	uid =  id;
+	id =  "id"+id;
 	
         //console.log("ID: " + profile.getId()); // Don't send this directly to your server!
         //console.log('Full Name: ' + profile.getName());
@@ -56,14 +56,14 @@ function onSignIn(googleUser) {
 	//var firebaseRef = firebase.database().ref();
 	
 	users = firebase.database().ref("users/");
-	users.child("UID").update(id);
-	/*
+	//users.child("UID").update(id);
+	
 	users.update({
-	   id:[id] {
+	   [id:] {
               id_token: [id_token],
 	      user: givenname,
 	      trans: [givenname]
 	   }
-	});*/
+	});
 }
 
