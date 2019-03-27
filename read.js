@@ -6,7 +6,7 @@ var config = {
         storageBucket: "html5project-870df.appspot.com",
         messagingSenderId: "54935462861"
       };
-firebase.initializeApp(config);
+//firebase.initializeApp(config);
 
 var database = firebase.database();
 var ref = database.ref().child("users");
