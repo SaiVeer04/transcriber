@@ -20,7 +20,7 @@ var test = "test5765";
 
 var name = snap.child("user").val();
 
-$("#read").append("<tr><td>"+name+"</td></tr><button>View</button>");
+$("#read").append("<tr><td>"+name+"</td><td><button>View</button></td></tr>");
 
 
 
