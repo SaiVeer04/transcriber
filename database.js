@@ -22,7 +22,7 @@ save.onclick = function() {
 		alert("The title of your document may not contain a slash, please remove them and try again...");
 	} else if (!/\S/.test(titlearea.text)){
 		alert("Please enter a title before saving!");
-	} ekse {
+	} else {
 		alert("Please sign in before you try to save!");	
 	}
 }
