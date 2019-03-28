@@ -56,8 +56,8 @@ function onSignIn(googleUser) {
         //var id_token = googleUser.getAuthResponse().id_token;
 	//var firebaseRef = firebase.database().ref();
 	
-// 	users = firebase.database().ref("users/");
-// 	//users.child("UID").update(id);
+ 	users = firebase.database().ref("users/");
+ 	//users.child("UID").update(id);
 	users.update({
  	   [id]: {
 		name: [givenname]
