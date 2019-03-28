@@ -59,7 +59,7 @@ function onSignIn(googleUser) {
 // 	users = firebase.database().ref("users/");
 // 	//users.child("UID").update(id);
 	users.update({
- 	   [id:] {
+ 	   [id] {
 		name: [givenname]
  	   }
  	});
