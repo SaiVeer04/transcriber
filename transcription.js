@@ -48,18 +48,17 @@ function capitalize(s) {
 }
 
 function startDictation(event) {
-  var button = document.createElement("button");
+  var button = document.createElement("start_button");
 
   if (recognizing) {
-    button.style.background='#4CAF50';
-    button.value="Start";
+    button.style.background = '#4CAF50';
+    button.innerHTML = "Start";
     recognition.stop();
     return;
   }
 
   button.style.background='#f44336';
-  button.value="Stop";
-  button.innerHTML = "Do Something";
+  button.innerHTML = "Stop";
   final_transcript = '';
   recognition.lang = 'en-US';
   recognition.start();
