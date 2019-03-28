@@ -1,5 +1,5 @@
-var transcript_title = null;
-var transcript = null;
+//var transcript_title = null;
+//var transcript = null;
 var config = {
         apiKey: "AIzaSyB9p1VvVfhnbrcDwUKUuSqw9aQsqnDi4nQ",
         authDomain: "html5project-870df.firebaseapp.com",
@@ -21,9 +21,9 @@ Rootref.on("child_added", snap => {
 
 
 alert(snap.val());
-transcript_title = snap.child("users").val();
+var transcript_title = snap.child("users").val();
 
-transcript = snap.child(transcript_title).val();
+var transcript = snap.child(transcript_title).val();
 $("#read").append('<tr><td>'+transcript_title+'</td><td><button id = "clicked">View</button></td></tr>');
 
 $("#clicked").click(function(){  
