@@ -12,7 +12,7 @@ var email = null;
 var uid = null;
 var id = null;
 
-save.onclick = function() {
+function saveFile() {
 	if (database != null && users != null && !titlearea.value.includes("/")) {
 		var textValue = textarea.value;
 		firebase.database().ref("users/" + id + "/trans").update ({
