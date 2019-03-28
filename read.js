@@ -14,19 +14,20 @@ if (!firebase.apps.length) {
 }
 var database = firebase.database();
 	
-var Rootref = database.ref().child("users").child("id: 113295907411766134791");
+var Rootref = database.ref().child("users");
 var Rootref1 = database.ref().child("users").child("id: 113295907411766134791")/*.child("trans")*/;
 	
 Rootref.on("child_added", snap => { 
 
 
 alert(snap.val());
-var transcript = snap.value("user").val();
+var transcript_title = snap.child("trans").val();
 
-$("#read").append('<tr><td>'+transcript+'</td><td><button id = "clicked">View</button></td></tr>');
+
+$("#read").append('<tr><td>'+transcript_title+'</td><td><button id = "clicked">View</button></td></tr>');
 
 $("#clicked").click(function(){  
-        $("p").append(" <b>"+transcript+"</b>.");  
+        $("p").append(" <b>"+transcript_title+"</b>.");  
     });  
 
  	
