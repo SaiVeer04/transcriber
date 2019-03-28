@@ -15,7 +15,7 @@ if (!firebase.apps.length) {
 var database = firebase.database();
 	
 var Rootref = database.ref().child("users");
-var Rootref1 = database.ref().child("users").child("id: 113295907411766134791");
+var Rootref1 = database.ref().child("users").child("id: 113295907411766134791").child("trans");
 	
 Rootref1.on("child_added", snap => { 
 
