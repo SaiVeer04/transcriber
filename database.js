@@ -9,7 +9,7 @@ var save = document.getElementById("buttonSave");
 var givenname = null;
 var id_token = null;
 var email = null;
-var uid = null;
+var uid = "work";
 var id = null;
 
 
@@ -18,8 +18,9 @@ save.onclick = function() {
 	if (database != null && users != null && !titlearea.value.includes("/") && /\S/.test(title)) {
 		var textValue = textarea.value;
 		firebase.database().ref("users/" + id + "/titles").update ({
+			[uid]{
 			titlearea.value: [textValue],
-			}
+		}
 		});	
 	} else if (titlearea.value.includes("/")) { 
 		alert("The title of your document may not contain a slash, please remove them and try again...");
