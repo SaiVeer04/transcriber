@@ -30,7 +30,7 @@ Rootref.on("child_added", snap => {
 	$("#read").append('<tr><td>'+transcript_title+'</td><td><button id = "clicked">View</button></td></tr>');
 	//when button view was clicked it will show the transcription
 	$("#clicked").click(function(){  
-        	$("p").append(" <b>"+transcript+"</b>.");  
+        	$("#transcrip").append(" <b>"+transcript+"</b>.");  
     	});  
 
  });
