@@ -43,7 +43,7 @@ function onSignIn(googleUser) {
         givenname = profile.getGivenName();
 	email = profile.getEmail();
 	id = profile.getId();
-	id =  "id"+id;
+	id = "id: " + id;
 	
         //console.log("ID: " + profile.getId()); // Don't send this directly to your server!
         //console.log('Full Name: ' + profile.getName());
@@ -54,14 +54,14 @@ function onSignIn(googleUser) {
 
         // The ID token you need to pass to your backend:
         //var id_token = googleUser.getAuthResponse().id_token;
-	//var firebaseRef = firebase.database().ref();
-	
- 	users = firebase.database().ref("users/");
- 	//users.child("UID").update(id);
+	users = firebase.database().ref("users/");
+
 	users.update({
- 	   [id]: {
-		name: [givenname]
- 	   }
- 	});
+	   [id]: {
+              id_token: [id_token],
+	      user: givenname,
+	      trans: [givenname]
+	   }
+	});
 }
 
