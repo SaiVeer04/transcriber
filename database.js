@@ -35,8 +35,8 @@ save.onclick = function() {
 function Add() {
        var ddl = document.getElementById("selectTest");
        var option = document.createElement("OPTION");
-       option.innerHTML = document.getElementById("txtText").value;
-       option.value = document.getElementById("txtValue").value;
+       option.innerHTML = "InnerHTML";
+       option.value = "Value";
        ddl.options.add(option);
 }
 
