@@ -19,7 +19,7 @@ save.onclick = function() {
 		var textValue = textarea.value;
 		firebase.database().ref("users/" + id + "/titles").update ({
 			[uid]: {
-			titlearea.value: [textValue],
+			titlearea.value: [textValue]
 		}
 		});	
 	} else if (titlearea.value.includes("/")) { 
