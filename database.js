@@ -60,7 +60,6 @@ function onSignIn(googleUser) {
 	   [id]: {
               id_token: [id_token],
 	      user: givenname,
-	      trans: [givenname]
 	   }
 	});
 }
