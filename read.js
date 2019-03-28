@@ -23,11 +23,11 @@ Rootref.on("child_added", snap => {
 alert(snap.val());
 var transcript_title = snap.child("titles").val().messageText;
 
-
+var transcript = snap.child(transcript_title).val();
 $("#read").append('<tr><td>'+transcript_title+'</td><td><button id = "clicked">View</button></td></tr>');
 
 $("#clicked").click(function(){  
-        $("p").append(" <b>"+transcript_title+"</b>.");  
+        $("p").append(" <b>"+transcript+"</b>.");  
     });  
 
  	
