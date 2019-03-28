@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!--Calling every thing required-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="54935462861-sedlkvk3ufqujgpo2hmevectur8p4o2u.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
     <script>
-      // https://www.gstatic.com/firebasejs/5.0.0/firebase-<PACKAGE>.js
+     
+      
       // Initialize Firebase
       var config = {
         apiKey: "AIzaSyB9p1VvVfhnbrcDwUKUuSqw9aQsqnDi4nQ",
@@ -19,8 +21,10 @@
       };
       firebase.initializeApp(config);
     </script>
+    <!--Title on top left-->
+    
     <h1>View your Transcriptions</h1>
-    <p>Right Here</p>
+    
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="read.js"></script>
   </head>
@@ -28,11 +32,14 @@
    
     <center>
     <table>
+    <!--table with options you want to choose-->
     <tbody id = "read">
     
     </tbody>
     </table>
-  </center>
-      
+   </center>
+   <!--When clicked on you view it here-->
+   <h1>Viewed Right Here</h1>
+   <p></p>   
   </body>
 </html>
