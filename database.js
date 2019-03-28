@@ -16,7 +16,7 @@ var id = null;
 save.onclick = function() {
 	if (database != null && users != null && !titlearea.value.includes("/")) {
 		String textValue = "title: " + textarea.value;
-		firebase.database().ref("users/" + id + "").update ({
+		firebase.database().ref("users/" + id + "/trans").update ({
 		    [titlearea.value]: {
 			text: [textValue]
 		    }
@@ -58,11 +58,10 @@ function onSignIn(googleUser) {
 	
 // 	users = firebase.database().ref("users/");
 // 	//users.child("UID").update(id);
-	
-// 	users.update({
-// 	   [id:] {
-              
-// 	   }
-// 	});
+	users.update({
+ 	   [id:] {
+		name: [givenname]
+ 	   }
+ 	});
 }
 
