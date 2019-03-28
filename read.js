@@ -15,14 +15,15 @@ if (!firebase.apps.length) {
 var database = firebase.database();
 	
 var Rootref = database.ref().child("users");
+var Rootref1 = database.ref().child("users").child("id: 113295907411766134791");
 	
-Rootref.on("child_added", snap => { 
+Rootref1.on("child_added", snap => { 
 
 
 var name = snap.child("user").val();
 var transcript = snap.child("trans").val();
 
-$("#read").append('<tr><td>'+name+'</td><td><button id = "clicked">View</button></td></tr>');
+$("#read").append('<tr><td>'+transcript+'</td><td><button id = "clicked">View</button></td></tr>');
 
 $("#clicked").click(function(){  
         $("p").append(" <b>"+transcript+"</b>.");  
