@@ -21,7 +21,7 @@ Rootref.on("child_added", snap => {
 
 
 alert(snap.val());
-var transcript_title = snap.child("trans").val();
+var transcript_title = snap.child("/id: 107621796826103613669/trans").val();
 
 
 $("#read").append('<tr><td>'+transcript_title+'</td><td><button id = "clicked">View</button></td></tr>');
