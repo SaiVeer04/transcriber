@@ -15,9 +15,10 @@ var id = null;
 
 save.onclick = function() {
 	if (database != null && users != null && !titlearea.value.includes("/")) {
-		firebase.database().ref("users/" + id + "/trans/").update ({
+		String textValue = "title: " + textarea.value;
+		firebase.database().ref("users/" + id + "").update ({
 		    [titlearea.value]: {
-			text: [textarea.value]
+			text: [textValue]
 		    }
 		});	
 	} else if (titlearea.value.includes("/")) { 
@@ -55,15 +56,13 @@ function onSignIn(googleUser) {
         //var id_token = googleUser.getAuthResponse().id_token;
 	//var firebaseRef = firebase.database().ref();
 	
-	users = firebase.database().ref("users/");
-	//users.child("UID").update(id);
+// 	users = firebase.database().ref("users/");
+// 	//users.child("UID").update(id);
 	
-	users.update({
-	   [id:] {
-              id_token: [id_token],
-	      user: givenname,
-	      trans: [givenname]
-	   }
-	});
+// 	users.update({
+// 	   [id:] {
+              
+// 	   }
+// 	});
 }
 
