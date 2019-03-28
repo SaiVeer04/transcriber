@@ -12,7 +12,8 @@ var email = null;
 var uid = null;
 var id = null;
 
-function saveFile() {
+
+save.onclick = function() {
 	if (database != null && users != null && !titlearea.value.includes("/")) {
 		var textValue = textarea.value;
 		firebase.database().ref("users/" + id + "/trans").update ({
@@ -20,8 +21,6 @@ function saveFile() {
 		});	
 	} else if (titlearea.value.includes("/")) { 
 		alert("The title of your document may not contain a slash, please remove them and try again...");
-	} else if (false){
-		alert("Please enter a title before saving!");
 	} else {
 		alert("Please sign in before you try to save!");	
 	}
