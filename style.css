@@ -3,3 +3,19 @@
 	top: 15px;
 	right: 15px;
 }
+
+#start_button {
+	background-color: #4CAF50; 	
+}
+
+#end_button {
+	background-color: #f44336;
+}
+
+#buttonSave {
+	background-color: #008CBA;
+}
+
+#buttonLoad {
+	background-color: #008CBA;
+}
