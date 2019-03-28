@@ -13,14 +13,16 @@ var uid = null;
 var id = null;
 
 save.onclick = function() {
-	if (database != null && users != null && !titlearea.value.includes("/")) {
+	if (database != null && users != null && !titlearea.value.includes("/") && /\S/.test(titlearea.text)) {
 		var textValue = textarea.value;
 		firebase.database().ref("users/" + id + "/trans").update ({
 			[titlearea.value]: [textValue]
 		});	
 	} else if (titlearea.value.includes("/")) { 
 		alert("The title of your document may not contain a slash, please remove them and try again...");
-	} else {
+	} else if (!/\S/.test(titlearea.text)){
+		alert("Please enter a title before saving!");
+	} ekse {
 		alert("Please sign in before you try to save!");	
 	}
 }
