@@ -32,6 +32,14 @@ save.onclick = function() {
 	}
 }
 
+function Add() {
+       var ddl = document.getElementById("selectTest");
+       var option = document.createElement("OPTION");
+       option.innerHTML = document.getElementById("txtText").value;
+       option.value = document.getElementById("txtValue").value;
+       ddl.options.add(option);
+}
+
 function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         profile = googleUser.getBasicProfile();
