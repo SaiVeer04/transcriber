@@ -27,15 +27,10 @@ Rootref.on("child_added", snap => {
 	//gets the actual title and stores it as a var
 	var transcript = snap.child(transcript_title).val();
 	//jquery - way to add html elemnts with javascript
-	//$("#read").append('<tr><td>'+transcript_title+'</td><td><button id = "clicked">View</button></td></tr>');
-	$("#read1").append('<option id = "work" value="'+transcript+'">'+transcript_title+'</option>')
+	$("#read").append('<tr><td>'+transcript_title+'</td><td><button id = "clicked">View</button></td></tr>');
 	//when button view was clicked it will show the transcription
-	$(" p:selected").text();
-	//$("#clicked").click(function(){  
-        	//$("p").append(" <b>"+transcript+"</b>.");  
-    	//});  
+	$("#clicked").click(function(){  
+        	$("p").append(" <b>"+transcript+"</b>.");  
+    	});  
 
  });
-
-	
-
