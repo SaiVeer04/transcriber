@@ -20,7 +20,7 @@ var Rootref1 = database.ref().child("users").child("id: 113295907411766134791").
 Rootref1.on("child_added", snap => { 
 
 
-var name = snap.child("user").val();
+
 var transcript = snap.child("trans").val();
 
 $("#read").append('<tr><td>'+transcript+'</td><td><button id = "clicked">View</button></td></tr>');
