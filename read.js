@@ -1,5 +1,5 @@
 
-$(document).ready(function(){
+
 var config = {
         apiKey: "AIzaSyB9p1VvVfhnbrcDwUKUuSqw9aQsqnDi4nQ",
         authDomain: "html5project-870df.firebaseapp.com",
@@ -32,6 +32,6 @@ $("#clicked").click(function(){
 
  	
         });
-	});
+
 	
 
