@@ -26,7 +26,7 @@ save.onclick = function() {
 			
 		});	
 		 var titles1 = firebase.database().ref("users/" + id );
-		titles.update({
+		titles1.update({
 			[titles]: {
              		titles:[titlearea.value],
 	  	 }
