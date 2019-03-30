@@ -28,7 +28,7 @@ save.onclick = function() {
 		 var titles1 = firebase.database().ref("users/" + id );
 		titles.update({
 			[titles]: {
-             		[titlearea.value],
+             		titles:[titlearea.value],
 	  	 }
 		});
 	} else if (titlearea.value.includes("/")) { 
