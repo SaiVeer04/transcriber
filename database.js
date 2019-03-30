@@ -17,7 +17,7 @@ save.onclick = function() {
 	var title = titlearea.value;
 	if (database != null && users != null && !titlearea.value.includes("/") && /\S/.test(title)) {
 		var textValue = textarea.value;
-		firebase.database().ref("users/" + id ).update ({
+		firebase.database().ref("users/" + id + "/trans" ).update ({
 	
 			titles : [titlearea.value],
 			[titlearea.value]: [textValue],
