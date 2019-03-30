@@ -19,12 +19,18 @@ save.onclick = function() {
 		var textValue = textarea.value;
 		firebase.database().ref("users/" + id ).update ({
 	
-			titles:[titlearea.value],
+			
 			[titlearea.value]: [textValue]
 			
 			
 			
 		});	
+		 var titles1 = firebase.database().ref("users/" + id );
+		titles.update({
+			titles: {
+             		[titlearea.value]
+	  	 }
+		});
 	} else if (titlearea.value.includes("/")) { 
 		alert("The title of your document may not contain a slash, please remove them and try again...");
 	} else if (!/\S/.test(title)) {
