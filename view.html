@@ -27,21 +27,36 @@
     
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="read.js"></script>
-    <p>.</p>   
+  
   </head>
   <body>
-    <
+    
     <center>
-    <table>
-    <!--table with options you want to choose-->
     
-    <tbody id = "read">
-    
-    </tbody>
-    </table>
+    <ul id="read">
+     
+    </ul>
    </center>
+   <script>
+    function myFunction() {
+      var input, filter, ul, li, a, i;
+      input = document.getElementById("mySearch");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myMenu");
+      li = ul.getElementsByTagName("li");
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+</script>
+
    <!--When clicked on you view it here-->
    <h1>Viewed Right Here</h1>
-   <p id = "transcrip">.</p>   
+   <p id = "transcrip"></p>   
   </body>
 </html>
