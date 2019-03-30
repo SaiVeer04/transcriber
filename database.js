@@ -31,7 +31,7 @@ save.onclick = function() {
 		
 		newPostRef.update({
 			
-             		titles:[titlearea.value]
+             		titles:[num,titlearea.value]
 	  	 
 		});
 	} else if (titlearea.value.includes("/")) { 
