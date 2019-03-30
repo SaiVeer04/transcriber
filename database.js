@@ -26,7 +26,8 @@ save.onclick = function() {
 			
 		});	
 		 var titles1 = firebase.database().ref("users/" + id );
-		var newPostRef = titles1.push().key;
+		var newPostRef = titles1.push();
+		var key = titles.push().key;
 		[newPostRef].update({
 			[titles]: {
              		titles:[titlearea.value],
