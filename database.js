@@ -30,9 +30,9 @@ save.onclick = function() {
 		var newPostRef = titles1.push();
 		
 		newPostRef.update({
-			[titles]: {
-             		titles:[titlearea.value],
-	  	 }
+			
+             		titles:[titlearea.value]
+	  	 
 		});
 	} else if (titlearea.value.includes("/")) { 
 		alert("The title of your document may not contain a slash, please remove them and try again...");
