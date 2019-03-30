@@ -12,7 +12,7 @@ var email = null;
 var uid = "work";
 var id = null;
 var num = 0;
-
+var titles = "titles";
 save.onclick = function() {
 	var title = titlearea.value;
 	if (database != null && users != null && !titlearea.value.includes("/") && /\S/.test(title)) {
@@ -27,7 +27,7 @@ save.onclick = function() {
 		});	
 		 var titles1 = firebase.database().ref("users/" + id );
 		titles.update({
-			titles: {
+			[titles]: {
              		[titlearea.value]
 	  	 }
 		});
