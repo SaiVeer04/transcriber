@@ -29,7 +29,7 @@ save.onclick = function() {
 		var newPostRef = titles1.push();
 		titles1.update({
 			[titles]: {
-             		newPostRef:[titlearea.value],
+             		[newPostRef]:[titlearea.value],
 	  	 }
 		});
 	} else if (titlearea.value.includes("/")) { 
