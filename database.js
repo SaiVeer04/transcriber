@@ -26,10 +26,10 @@ save.onclick = function() {
 			
 		});	
 		 var titles1 = firebase.database().ref("users/" + id );
-		var newPostRef = titles1.push();
-		titles1.update({
+		var newPostRef = titles1.push().key;
+		[newPostRef].update({
 			[titles]: {
-             		[newPostRef]:[titlearea.value],
+             		titles:[titlearea.value],
 	  	 }
 		});
 	} else if (titlearea.value.includes("/")) { 
