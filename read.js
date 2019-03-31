@@ -30,7 +30,8 @@ Rootref.on("child_added", snap => {
   var numtest = 0;
 	//jquery - way to add html elemnts with javascript
   
-	  $("#read").append('<h4 id = "clicked">'+transcript_title+'</h4>');
+	  //$("#read").append('<h4 id = "clicked">'+transcript_title+'</h4>');
+		$("#read").append('<h4 >Test</h4>');
   
 	//when button view was clicked it will show the transcriptiodn
 	
