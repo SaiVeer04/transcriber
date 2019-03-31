@@ -23,11 +23,13 @@ save.onclick = function() {
 			
 			titles:{
 			[time]:[titlearea.value],
-			[titlearea.value]: [textValue]
+			
 			
 			}
 			
-			
+			[titlearea.value]: [textValue]
+			time = undefined;
+			today = undefined;
 		});	
 		 var titles1 = firebase.database().ref("users/" + id );
 		
