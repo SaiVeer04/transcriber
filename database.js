@@ -11,21 +11,21 @@ var id_token = null;
 var email = null;
 var uid = "work";
 var id = null;
-var num = null;
+var num = 0;
 var titles = "titles";
 
 var date_time = null;
 save.onclick = function() {
 	var today = new Date();
 	var time = today.getYear() + today.getMonth() + today.getDay() + today.getHours() + today.getMinutes()  + today.getSeconds();
-	num = 0;
+
 	var title = titlearea.value;
 	if (database != null && users != null && !titlearea.value.includes("/") && /\S/.test(title)) {
 		var textValue = textarea.value;
 		firebase.database().ref("users/" + id +"/titles").update ({
 			
 			
-			[time]:titlearea.value,
+			[num = num + 1]:titlearea.value,
 			
 			
 			
