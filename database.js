@@ -1,6 +1,7 @@
 var profile;
 var userID = null;
 // Get a reference to the database service
+var dropDown = document.getElementById("selectTest");
 var database = firebase.database();
 var users = null;
 var textarea = document.getElementById("noteInput");
