@@ -22,7 +22,7 @@ save.onclick = function() {
 		firebase.database().ref("users/" + id ).update ({
 			[titlearea.value]: [textValue],
 			titles:{
-			[time]:[titlearea.value],
+			[num = num + 1]:[titlearea.value],
 			
 			
 			}
