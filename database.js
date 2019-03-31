@@ -1,7 +1,6 @@
 var profile;
 var userID = null;
 // Get a reference to the database service
-var dropDown = document.getElementById("selectTest");
 var database = firebase.database();
 var users = null;
 var textarea = document.getElementById("noteInput");
@@ -15,23 +14,6 @@ var id = null;
 var num = 0;
 var titles = "titles";
 
-dropDown.onclick = function() {
-    if (id == null) {
-      	alert("Please sign in!");
-    } else {
-	var select = document.getElementById("selectTest");
-	var length = select.options.length;
-	for (i = 1; i < length; i++) {
-	  select.options[i] = null;
-	}
-      	var dbRef = database.ref("users/" + id + "/");
-      	var titles = dbRef.child("titles");
-      	titles.on("value", function(snapshot) {
-		Add(snapshot.val());
-	});
-    }
-};
-
 var date_time = null;
 save.onclick = function() {
 	var today = new Date();
@@ -41,10 +23,22 @@ save.onclick = function() {
 	if (database != null && users != null && !titlearea.value.includes("/") && /\S/.test(title)) {
 		var textValue = textarea.value;
 		firebase.database().ref("users/" + id +"/titles").update ({
-			[time]: titlearea.value,
+			
+			
+			[time]:titlearea.value,
+			
+			
+			
+			
+			
+			
 		});
-		firebase.database().ref("users/" + id + "/trans").update ({
+		firebase.database().ref("users/" + id ).update ({
+		
 			[titlearea.value]: [textValue]
+		 
+		
+		
 		});
              		
 	  	 
@@ -58,11 +52,11 @@ save.onclick = function() {
 	}
 }
 
-function Add(val) {
+function Add() {
        var ddl = document.getElementById("selectTest");
        var option = document.createElement("OPTION");
-       option.innerHTML = val;
-       option.value = val;
+       option.innerHTML = "InnerHTML";
+       option.value = "Value";
        ddl.options.add(option);
 }
 
