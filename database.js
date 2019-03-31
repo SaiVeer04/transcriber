@@ -19,6 +19,11 @@ dropDown.onclick = function() {
     if (id == null) {
       	alert("Please sign in!");
     } else {
+	var select = document.getElementById("selectTest");
+	var length = select.options.length;
+	for (i = 1; i < length; i++) {
+	  select.options[i] = null;
+	}
       	var dbRef = database.ref("users/" + id + "/");
       	var titles = dbRef.child("titles");
       	titles.on("value", function(snapshot) {
