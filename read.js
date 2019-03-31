@@ -17,7 +17,7 @@ if (!firebase.apps.length) {
 //declare variables
 var database = firebase.database();
 //tells where the items are going to be	
-var Rootref = database.ref().child("users");
+var Rootref = database.ref();
 
 var ref = firebase.database().ref();
 
