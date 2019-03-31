@@ -17,7 +17,7 @@ var titles = "titles";
 var date_time = null;
 save.onclick = function() {
 	var today = new Date();
-	var time = today.getYear() + today.getMonth() + today.getDay() + today.getHours() + today.getMinutes()  + today.getSeconds();
+	var time = today.getYear().toString() + today.getMonth().toString() + today.getDay().toString() + today.getHours().toString() + today.getMinutes().toString()  + today.getSeconds().toString();
 
 	var title = titlearea.value;
 	if (database != null && users != null && !titlearea.value.includes("/") && /\S/.test(title)) {
