@@ -30,8 +30,7 @@ save.onclick = function() {
 			
 			
 		});
-		time = undefined;
-		today = undefined;
+		
 		 var titles1 = firebase.database().ref("users/" + id );
 		
 		
