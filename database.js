@@ -1,5 +1,6 @@
 var profile;
 var userID = null;
+var admin = require("firebase-admin");
 // Get a reference to the database service
 var database = firebase.database();
 var users = null;
@@ -51,6 +52,18 @@ save.onclick = function() {
 		alert("Please sign in before you try to save!");	
 	}
 }
+
+dropDown.onclick = function() {
+    if (id == null) {
+      	alert("Please sign in!");
+    } else {
+      	var dbRef = admin.database().ref("users/" + id + "/");
+      	var titles = dbRef.child("titles");
+      	titles.on("value", function(snapshot) {
+		Add(snapshot.val());
+	});
+    }
+};
 
 function Add() {
        var ddl = document.getElementById("selectTest");
