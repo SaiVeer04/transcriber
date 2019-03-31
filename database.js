@@ -74,8 +74,8 @@ save.onclick = function() {
 function Add(name) {
        var ddl = document.getElementById("selectTest");
        var option = document.createElement("OPTION");
-       option.innerHTML = name;
-       option.value = name;
+       option.innerHTML = name.toString();
+       option.value = name.toString();
        ddl.options.add(option);
 }
 
