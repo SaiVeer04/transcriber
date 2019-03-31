@@ -21,7 +21,7 @@ var Rootref = database.ref().child("users").child("id: 107621796826103613669").c
 //var Rootref1 = database.ref().child("users").child("id: 113295907411766134791")/*.child("trans")*/;
 
 //used to retrieve data	
-Rootref.on("child_added", snap => { 
+Rootref.once("child_added", snap => { 
 	//gets the child of titles stores it as variable
 	var transcript_title = snap.child("titles").val();
 	//gets the actual title and stores it as a var
@@ -30,8 +30,8 @@ Rootref.on("child_added", snap => {
   var numtest = 0;
 	//jquery - way to add html elemnts with javascript
   
-	  //$("#read").append('<h4 id = "clicked">'+transcript_title+'</h4>');
-		$("#read").append('<h4 >Test</h4>');
+	  $("#read").append('<h4 id = "clicked">'+transcript_title+'</h4>');
+		//$("#read").append('<h4 >Test</h4>');
   
 	//when button view was clicked it will show the transcriptiodn
 	
