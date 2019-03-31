@@ -28,7 +28,7 @@ dropDown.onclick = function() {
 	}
       	var dbRef = database.ref("users/" + id + "/");
       	var titles = dbRef.child("titles");
-      	titles.on("value", function(snapshot) {
+      	titles.on("childAdded", function(snapshot) {
 		Add(snapshot.val());
 	});
     }
