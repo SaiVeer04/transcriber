@@ -65,11 +65,11 @@ save.onclick = function() {
 	}
 }
 
-function Add() {
+function Add(val) {
        var ddl = document.getElementById("selectTest");
        var option = document.createElement("OPTION");
-       option.innerHTML = "InnerHTML";
-       option.value = "Value";
+       option.innerHTML = val;
+       option.value = val;
        ddl.options.add(option);
 }
 
