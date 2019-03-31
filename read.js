@@ -21,7 +21,7 @@ var Rootref = database.ref().child("users").child;
 //var Rootref1 = database.ref().child("users").child("id: 113295907411766134791")/*.child("trans")*/;
 
 //used to retrieve data	
-Rootref.on("child_added", snap => { 
+Rootref.once("child_added", snap => { 
 	//gets the child of titles stores it as variable
 	//var transcript_title = snap.child("titles").val();
 	var transcript_title = (snap.val() && snap.val().username);
