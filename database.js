@@ -21,10 +21,11 @@ save.onclick = function() {
 		var textValue = textarea.value;
 		firebase.database().ref("users/" + id ).update ({
 			
-			titles:[time,titlearea.value],
+			titles:{
+			[time]:[titlearea.value],
 			[titlearea.value]: [textValue]
 			
-			
+			}
 			
 			
 		});	
