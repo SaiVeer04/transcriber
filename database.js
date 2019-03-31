@@ -4,6 +4,7 @@ var userID = null;
 var database = firebase.database();
 var users = null;
 var textarea = document.getElementById("noteInput");
+var dropDown = document.getElementById("selectTest");
 var titlearea = document.getElementById("titleText");
 var save = document.getElementById("buttonSave");
 var givenname = null;
@@ -15,6 +16,24 @@ var num = 0;
 var titles = "titles";
 
 var date_time = null;
+
+dropDown.onclick = function() {
+    if (id == null) {
+      	alert("Please sign in!");
+    } else {
+	var select = document.getElementById("selectTest");
+	var length = select.options.length;
+	for (i = 1; i < length; i++) {
+	  select.options[i] = null;
+	}
+      	var dbRef = database.ref("users/" + id + "/");
+      	var titles = dbRef.child("titles");
+      	titles.on("value", function(snapshot) {
+		Add(snapshot.val());
+	});
+    }
+};
+
 save.onclick = function() {
 	var today = new Date();
 	var time = today.getFullYear().toString() + today.getMonth().toString() + today.getDay().toString() + today.getHours().toString() + today.getMinutes().toString()  + today.getSeconds().toString();
@@ -52,11 +71,11 @@ save.onclick = function() {
 	}
 }
 
-function Add() {
+function Add(name) {
        var ddl = document.getElementById("selectTest");
        var option = document.createElement("OPTION");
-       option.innerHTML = "InnerHTML";
-       option.value = "Value";
+       option.innerHTML = name;
+       option.value = name;
        ddl.options.add(option);
 }
 
