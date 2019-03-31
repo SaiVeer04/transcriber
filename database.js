@@ -11,11 +11,12 @@ var id_token = null;
 var email = null;
 var uid = "work";
 var id = null;
-var num = 0;
+var num = null;
 var titles = "titles";
 var today = new Date();
 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 save.onclick = function() {
+	num = 0;
 	var title = titlearea.value;
 	if (database != null && users != null && !titlearea.value.includes("/") && /\S/.test(title)) {
 		var textValue = textarea.value;
