@@ -17,7 +17,15 @@ if (!firebase.apps.length) {
 //declare variables
 var database = firebase.database();
 //tells where the items are going to be	
-var Rootref = database.ref().child("users");
+//var Rootref = database.ref().child("users");
+
+var ref = firebase.database().ref();
+
+ref.on("value", function(snapshot) {
+   console.log(snapshot.val());
+}, function (error) {
+   console.log("Error: " + error.code);
+});
 //var Rootref1 = database.ref().child("users").child("id: 113295907411766134791")/*.child("trans")*/;
 
 //used to retrieve data	
