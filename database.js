@@ -25,22 +25,15 @@ save.onclick = function() {
 	if (database != null && users != null && !titlearea.value.includes("/") && /\S/.test(title)) {
 		var textValue = textarea.value;
 		firebase.database().ref("users/" + id +"/titles").update ({
-			
-			
-			[time]:{titlearea.value},
-			
-			
-			
-			
-			
-			
+			[time]:
+				titlearea.value,
 		});
 		firebase.database().ref("users/" + id ).update ({
-		
-			[titlearea.value]: textValue
-		 
-		
-		
+			[titlearea.value]: {
+				text: {
+					textValue
+				}
+			}
 		});
              		
 	  	 
@@ -58,12 +51,11 @@ function Add(snapshot) {
         var ddl = document.getElementById("selectTest");
         var option = document.createElement("OPTION");
         var name = snapshot.val();
-        var title = name.title;
+	var text = snapshot.child("text").val();
 	
-	console.log("Title: " + title);
-	console.log("Name: " + name);
+	console.log("Title: " + name);
+	console.log("Name: " + text);
         option.innerHTML = name.toString();
-        option.value = name.toString();
         ddl.options.add(option);
 }
 
