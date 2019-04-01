@@ -47,6 +47,8 @@ save.onclick = function() {
 			[titlearea.value]: textarea.value
 		});
 		
+		dropDown.options[dropDown.selectedIndex].value = textarea.value;
+		
 	} else if (titlearea.value.includes("/")) { 
 		alert("The title of your document may not contain a slash, please remove them and try again...");
 	} else if (!/\S/.test(title)) {
@@ -70,15 +72,6 @@ function Add(snapshot) {
         ddl.options.add(option);
 }
 
-// function Add(title) {
-//         var ddl = document.getElementById("selectTest");
-//         var option = document.createElement("OPTION");
-	
-// 	console.log("Title: " + title);
-//         option.innerHTML = title;
-//         ddl.options.add(option);
-// }
-
 function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         profile = googleUser.getBasicProfile();
@@ -88,11 +81,8 @@ function onSignIn(googleUser) {
 	id = profile.getId();
 	id = "id: " + id;
 
-        // The ID token you need to pass to your backend:
-        //var id_token = googleUser.getAuthResponse().id_token;
 	users = firebase.database().ref("users/");
-	var select = document.getElementById("selectTest");
-	var length = select.options.length;
+	var length = dropDown.options.length;
 	for (i = 1; i < length; i++) {
 	  	select.options[i] = null;
 	}
