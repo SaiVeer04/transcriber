@@ -32,7 +32,7 @@ save.onclick = function() {
 			"text": textarea.value
 		});
              		
-	  	Add(titlearea.value, textarea.value);
+	  	Add(titlearea.value);
 		
 	} else if (titlearea.value.includes("/")) { 
 		alert("The title of your document may not contain a slash, please remove them and try again...");
@@ -55,15 +55,12 @@ function Add(snapshot) {
         ddl.options.add(option);
 }
 
-function Add(title, value) {
+function Add(title) {
         var ddl = document.getElementById("selectTest");
         var option = document.createElement("OPTION");
-        var name = snapshot.val();
-	var text = snapshot.child("text").val();
 	
-	console.log("Title: " + name);
-	console.log("Name: " + text);
-        option.innerHTML = name.toString();
+	console.log("Title: " + title);
+        option.innerHTML = title;
         ddl.options.add(option);
 }
 
