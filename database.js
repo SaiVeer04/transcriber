@@ -22,7 +22,7 @@ load.onclick = function() {
 	var cont = confirm("Are you sure you want to continue? Any unsaved data will be lost.");
 	
 	if (cont) {
-		titlearea.innerHTML = titlearea.options[titlearea.selectedIndex].value;
+		titlearea.innerHTML = dropDown.options[dropDown.selectedIndex].value;
 	}
 }
 
