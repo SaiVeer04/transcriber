@@ -19,10 +19,17 @@ var titles = "titles";
 var date_time = null;
 
 load.onclick = function() {
+	if (database == null) {
+		alert("Please sign in before loading a file!");
+		return;
+	}
+	
 	var cont = confirm("Are you sure you want to continue? Any unsaved data will be lost.");
 	
 	if (cont) {
-		titlearea.value = dropDown.options[dropDown.selectedIndex].text;
+		var title = dropDown.options[dropDown.selectedIndex].text;
+		titlearea.value = title;
+		textarea.value = database.ref("users/" + id + "/" + title + "/text").val();		
 	}
 }
 
