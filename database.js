@@ -1,6 +1,5 @@
 var profile;
 var userID = null;
-// Get a reference to the database service
 var database = firebase.database();
 var users = null;
 var textarea = document.getElementById("noteInput");
@@ -27,12 +26,9 @@ load.onclick = function() {
 	var cont = confirm("Are you sure you want to continue? Any unsaved data will be lost.");
 	
 	if (cont) {
-		var title = dropDown.options[dropDown.selectedIndex].text;
-		titlearea.value = title;
-		var dbRef = database.ref("user/" + id + "/" + title);
-		dbRef.once("value", function(snapshot) {
-			textarea.value = snapshot.val().toString();		
-		});
+		var title = dropDown.options[dropDown.selectedIndex];
+		titlearea.value = title.text;
+		textarea.value = title.value;
 	}
 }
 
@@ -50,8 +46,6 @@ save.onclick = function() {
 		firebase.database().ref("users/" + id).update ({
 			[titlearea.value]: textarea.value
 		});
-             		
-//	  	Add(titlearea.value);
 		
 	} else if (titlearea.value.includes("/")) { 
 		alert("The title of your document may not contain a slash, please remove them and try again...");
@@ -72,6 +66,7 @@ function Add(snapshot) {
 	//console.log("Value: " + value.toString());
 	
         option.innerHTML = title.toString();
+	option.value = value.toString();
         ddl.options.add(option);
 }
 
