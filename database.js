@@ -28,10 +28,8 @@ save.onclick = function() {
 			[time]:
 				titlearea.value,
 		});
-		firebase.database().ref("users/" + id ).update ({
-			[titlearea.value]: {
-				text: [textarea.value]
-			}
+		firebase.database().ref("users/" + id + "/" + titlearea.value).update ({
+			"text": [textarea.value]
 		});
              		
 	  	 
