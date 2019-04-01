@@ -17,23 +17,6 @@ var titles = "titles";
 
 var date_time = null;
 
-dropDown.onclick = function() {
-    if (id == null) {
-      	alert("Please sign in!");
-    } else {
-	var select = document.getElementById("selectTest");
-	var length = select.options.length;
-	for (i = 1; i < length; i++) {
-	  select.options[i] = null;
-	}
-      	var dbRef = database.ref("users/" + id + "/");
-      	var titles = dbRef.child("titles");
-      	titles.on("child_added", function(snapshot) {
-		Add(snapshot.val());
-	});
-    }
-};
-
 save.onclick = function() {
 	var today = new Date();
 	var time = today.getFullYear().toString() + today.getMonth().toString() + today.getDay().toString() + today.getHours().toString() + today.getMinutes().toString()  + today.getSeconds().toString();
@@ -71,12 +54,17 @@ save.onclick = function() {
 	}
 }
 
-function Add(name) {
-       var ddl = document.getElementById("selectTest");
-       var option = document.createElement("OPTION");
-       option.innerHTML = name.toString();
-       option.value = name.toString();
-       ddl.options.add(option);
+function Add(snapshot) {
+        var ddl = document.getElementById("selectTest");
+        var option = document.createElement("OPTION");
+        var name = snapshot.val();
+        var title = name.title;
+	
+	console.log("Title: " + title);
+	console.log("Name: " + name);
+        option.innerHTML = name.toString();
+        option.value = name.toString();
+        ddl.options.add(option);
 }
 
 function onSignIn(googleUser) {
@@ -98,7 +86,17 @@ function onSignIn(googleUser) {
         // The ID token you need to pass to your backend:
         //var id_token = googleUser.getAuthResponse().id_token;
 	users = firebase.database().ref("users/");
-
+	var select = document.getElementById("selectTest");
+	var length = select.options.length;
+	for (i = 1; i < length; i++) {
+	  	select.options[i] = null;
+	}
+	var dbRef = database.ref("users/" + id + "/");
+	var titles = dbRef.child("titles");
+	titles.on("child_added", function(snapshot) {
+		Add(snapshot);
+	});
+	
 	/*users.set({
 	   [id]: {
               id_token: [id_token],
