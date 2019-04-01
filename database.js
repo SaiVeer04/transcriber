@@ -7,6 +7,7 @@ var textarea = document.getElementById("noteInput");
 var dropDown = document.getElementById("selectTest");
 var titlearea = document.getElementById("titleText");
 var save = document.getElementById("buttonSave");
+var load = document.getElementById("buttonLoad");
 var givenname = null;
 var id_token = null;
 var email = null;
@@ -16,6 +17,14 @@ var num = 0;
 var titles = "titles";
 
 var date_time = null;
+
+load.onclick = function() {
+	var cont = confirm("Are you sure you want to continue? Any unsaved data will be lost.");
+	
+	if (cont) {
+		titlearea.innerHTML = titlearea.options[titlearea.selectedIndex].value;
+	}
+}
 
 save.onclick = function() {
 	var today = new Date();
