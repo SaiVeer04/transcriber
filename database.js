@@ -66,10 +66,10 @@ function Add(snapshot) {
         var ddl = document.getElementById("selectTest");
         var option = document.createElement("OPTION");
         var title = snapshot.ref.key;
-	var value = snapshot.ref.text;
+	var value = snapshot.ref.val();
 	
 	console.log("Title: " + title);
-	console.log("Value: " + value);
+	console.log("Value: " + value.toString());
 	
         option.innerHTML = title.toString();
         ddl.options.add(option);
