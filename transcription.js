@@ -1,8 +1,9 @@
 var final_transcript = '';
 var recognizing = false;
+//get note input
 var notes = document.getElementById("noteInput");
 var notes1 = document.getElementById("noteInput");
-
+//check browser supported
 if ('webkitSpeechRecognition' in window) {
 
   var recognition = new webkitSpeechRecognition()
