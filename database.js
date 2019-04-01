@@ -1,12 +1,12 @@
+//init variables
 var profile;
 var userID = null;
+// Get a reference to the database service
 var database = firebase.database();
 var users = null;
 var textarea = document.getElementById("noteInput");
-var dropDown = document.getElementById("selectTest");
 var titlearea = document.getElementById("titleText");
 var save = document.getElementById("buttonSave");
-var load = document.getElementById("buttonLoad");
 var givenname = null;
 var id_token = null;
 var email = null;
@@ -16,39 +16,37 @@ var num = 0;
 var titles = "titles";
 
 var date_time = null;
-
-load.onclick = function() {
-	if (database == null) {
-		alert("Please sign in before loading a file!");
-		return;
-	}
-	
-	var cont = confirm("Are you sure you want to continue? Any unsaved data will be lost.");
-	
-	if (cont) {
-		var title = dropDown.options[dropDown.selectedIndex];
-		titlearea.value = title.text;
-		textarea.value = title.value;
-	}
-}
-
+//save button function
 save.onclick = function() {
+  //set it as a random string
 	var today = new Date();
 	var time = today.getFullYear().toString() + today.getMonth().toString() + today.getDay().toString() + today.getHours().toString() + today.getMinutes().toString()  + today.getSeconds().toString();
 
 	var title = titlearea.value;
 	if (database != null && users != null && !titlearea.value.includes("/") && /\S/.test(title)) {
 		var textValue = textarea.value;
-// 		firebase.database().ref("users/" + id +"/titles").update ({
-// 			[time]:
-// 				titlearea.value,
-// 		});
-		firebase.database().ref("users/" + id).update ({
-			[titlearea.value]: textarea.value
+    //sent to database
+		firebase.database().ref("users/" + id +"/titles").update ({
+			
+			//title value
+			[time]:titlearea.value,
+			
+			
+			
+			
+			
+			
 		});
+		firebase.database().ref("users/" + id ).update ({
+		//transcription
+			[titlearea.value]: textValue
+		 
 		
-		dropDown.options[dropDown.selectedIndex].value = textarea.value;
 		
+		});
+             		
+	  	 
+		//error trapping
 	} else if (titlearea.value.includes("/")) { 
 		alert("The title of your document may not contain a slash, please remove them and try again...");
 	} else if (!/\S/.test(title)) {
@@ -58,20 +56,14 @@ save.onclick = function() {
 	}
 }
 
-function Add(snapshot) {
-        var ddl = document.getElementById("selectTest");
-        var option = document.createElement("OPTION");
-        var title = snapshot.ref.key;
-	var value = snapshot.val();
-	
-	//console.log("Title: " + title);
-	//console.log("Value: " + value.toString());
-	
-        option.innerHTML = title.toString();
-	option.value = value.toString();
-        ddl.options.add(option);
+function Add() {
+       var ddl = document.getElementById("selectTest");
+       var option = document.createElement("OPTION");
+       option.innerHTML = "InnerHTML";
+       option.value = "Value";
+       ddl.options.add(option);
 }
-
+//google signin
 function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         profile = googleUser.getBasicProfile();
@@ -80,15 +72,23 @@ function onSignIn(googleUser) {
 	email = profile.getEmail();
 	id = profile.getId();
 	id = "id: " + id;
+	
+        //console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        //console.log('Full Name: ' + profile.getName());
+        //console.log('Given Name: ' + profile.getGivenName());
+        //console.log('Family Name: ' + profile.getFamilyName());
+        //console.log("Image URL: " + profile.getImageUrl());
+        //console.log("Email: " + profile.getEmail());
 
+        // The ID token you need to pass to your backend:
+        //var id_token = googleUser.getAuthResponse().id_token;
 	users = firebase.database().ref("users/");
-	var length = dropDown.options.length;
-	for (i = 1; i < length; i++) {
-	  	select.options[i] = null;
-	}
-	var dbRef = database.ref("users/" + id);
-	dbRef.on("child_added", function(snapshot) {
-		Add(snapshot);
-	});
+
+	/*users.set({
+	   [id]: {
+              id_token: [id_token],
+	      user: givenname,
+	   }
+	});*/
 }
 
