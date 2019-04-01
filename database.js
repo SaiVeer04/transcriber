@@ -31,7 +31,7 @@ load.onclick = function() {
 		titlearea.value = title;
 		var dbRef = database.ref("user/" + id + "/" + title);
 		dbRef.on("value", function(snapshot) {
-			textarea.value = snapshot.ref.value.toString();		
+			//textarea.value = snapshot.ref.value.toString();		
 		});
 	}
 }
@@ -71,7 +71,6 @@ function Add(snapshot) {
 	console.log("Title: " + title);
 	console.log("Value: " + value);
 	
-	option.value = value;
         option.innerHTML = title.toString();
         ddl.options.add(option);
 }
