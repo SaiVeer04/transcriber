@@ -54,7 +54,7 @@ save.onclick = function() {
 		});
 		firebase.database().ref("users/" + id ).update ({
 		
-			[titlearea.value]: [textValue]
+			[titlearea.value]: textValue
 		 
 		
 		
