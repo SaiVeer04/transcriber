@@ -1,5 +1,8 @@
-//var transcript_title = null;
-//var transcript = null;
+
+//var titlejson = JSON.parse(title_s);
+var teststring = "Test";
+
+
 //This is to intialize everything and auth. with the firebase server
 var config = {
         apiKey: "AIzaSyB9p1VvVfhnbrcDwUKUuSqw9aQsqnDi4nQ",
@@ -41,6 +44,20 @@ Rootref.on("child_added",snap => {
 	 snap.child("titles").forEach(function(titleSnap) {
   $("#read").append('<h4 id = "clicked">'+titleSnap.val()+'</h4>');
 })
+
+  console.log(teststring);
+  $( "#TitleButton" ).click(function() {
+  var title_s = document.getElementById('TitleSearch');
+   
+   var search = snap.child(title_s.value).val();
+
+  if(search != null){
+  $("#ReadHere").append('<p>'+search+'</p>');
+  
+  }
+   
+  
+  });
 		//$("#read").append('<h4 >Test</h4>');
   
 	//when button view was clicked it will show the transcriptiodn
