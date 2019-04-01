@@ -28,11 +28,11 @@ save.onclick = function() {
 // 			[time]:
 // 				titlearea.value,
 // 		});
-		firebase.database().ref("users/" + id + "/" + titlearea.value).update ({
-			"text": textarea.value
+		firebase.database().ref("users/" + id).update ({
+			[titlearea.value]: textarea.value
 		});
              		
-	  	Add(titlearea.value);
+//	  	Add(titlearea.value);
 		
 	} else if (titlearea.value.includes("/")) { 
 		alert("The title of your document may not contain a slash, please remove them and try again...");
@@ -46,7 +46,7 @@ save.onclick = function() {
 function Add(snapshot) {
         var ddl = document.getElementById("selectTest");
         var option = document.createElement("OPTION");
-        var name = snapshot.val();
+        var name = snapshot.parent.val();
 	var text = snapshot.child("text").val();
 	
 	console.log("Title: " + name);
@@ -55,14 +55,14 @@ function Add(snapshot) {
         ddl.options.add(option);
 }
 
-function Add(title) {
-        var ddl = document.getElementById("selectTest");
-        var option = document.createElement("OPTION");
+// function Add(title) {
+//         var ddl = document.getElementById("selectTest");
+//         var option = document.createElement("OPTION");
 	
-	console.log("Title: " + title);
-        option.innerHTML = title;
-        ddl.options.add(option);
-}
+// 	console.log("Title: " + title);
+//         option.innerHTML = title;
+//         ddl.options.add(option);
+// }
 
 function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
