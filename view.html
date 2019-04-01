@@ -22,41 +22,30 @@
       firebase.initializeApp(config);
     </script>
     <!--Title on top left-->
-    
+    <center>
     <h1>View your Transcriptions</h1>
     
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="view.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="read.js"></script>
   
   </head>
   <body>
-    
+    <input type="text" id="TitleSearch">
+    <button id = "TitleButton">Search</button>
     <center>
     
     <ul id="read">
      
     </ul>
    </center>
-   <script>
-    function myFunction() {
-      var input, filter, ul, li, a, i;
-      input = document.getElementById("mySearch");
-      filter = input.value.toUpperCase();
-      ul = document.getElementById("myMenu");
-      li = ul.getElementsByTagName("li");
-      for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-          li[i].style.display = "";
-        } else {
-          li[i].style.display = "none";
-        }
-      }
-    }
-</script>
+   
 
    <!--When clicked on you view it here-->
-   <h1>Viewed Right Here</h1>
-   <p id = "transcrip"></p>   
+   <h2>Viewed It Right Here</h2>
+   <div id = "ReadHere">
+   </div>
+   <p id = "transcrip"></p>  
+   <a href="index.html">Go Back</a>
+   </center>
   </body>
 </html>
