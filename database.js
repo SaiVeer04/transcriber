@@ -29,7 +29,7 @@ load.onclick = function() {
 	if (cont) {
 		var title = dropDown.options[dropDown.selectedIndex].text;
 		titlearea.value = title;
-		textarea.value = database.ref("users/" + id + "/" + title + "/text").val();		
+		textarea.value = dropDown.options[dropDown.selectedIndex].value;		
 	}
 }
 
