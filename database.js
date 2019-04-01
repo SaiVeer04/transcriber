@@ -30,8 +30,8 @@ load.onclick = function() {
 		var title = dropDown.options[dropDown.selectedIndex].text;
 		titlearea.value = title;
 		var dbRef = database.ref("user/" + id + "/" + title);
-		dbRef.on("value", function(snapshot) {
-			//textarea.value = snapshot.ref.value.toString();		
+		dbRef.once("value", function(snapshot) {
+			textarea.value = snapshot.val().toString();		
 		});
 	}
 }
@@ -68,8 +68,8 @@ function Add(snapshot) {
         var title = snapshot.ref.key;
 	var value = snapshot.val();
 	
-	console.log("Title: " + title);
-	console.log("Value: " + value.toString());
+	//console.log("Title: " + title);
+	//console.log("Value: " + value.toString());
 	
         option.innerHTML = title.toString();
         ddl.options.add(option);
