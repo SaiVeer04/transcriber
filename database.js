@@ -46,12 +46,10 @@ save.onclick = function() {
 function Add(snapshot) {
         var ddl = document.getElementById("selectTest");
         var option = document.createElement("OPTION");
-        var name = snapshot.parent.val();
-	var text = snapshot.child("text").val();
+        var title = snapshot.key();
 	
-	console.log("Title: " + name);
-	console.log("Name: " + text);
-        option.innerHTML = name.toString();
+	console.log("Title: " + title);
+        option.innerHTML = title.toString();
         ddl.options.add(option);
 }
 
