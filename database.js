@@ -30,9 +30,7 @@ save.onclick = function() {
 		});
 		firebase.database().ref("users/" + id ).update ({
 			[titlearea.value]: {
-				text: {
-					textValue
-				}
+				textarea.value
 			}
 		});
              		
