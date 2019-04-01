@@ -5,11 +5,10 @@
 }
 
 #start_button {
-	background-color: #4CAF50; 	
-}
-
-#load_button {
-	background-color: #4CAF50; 	
+  position: absolute;
+	background-color: #4CAF50;
+  top: 130px; 
+  left: 920px;
 }
 
 #end_button {
@@ -23,3 +22,44 @@
 button {
 	padding: 5px;	
 }
+ h4{
+    border-style: solid;
+    border-radius: 10px;
+    border-color:rgba(0, 183, 255, 0.897);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:20px;
+    padding: 9px;
+    right: 10px;
+    background-color: rgba(0, 183, 255, 0.897);
+    display: inline
+
+ }
+#titleText{
+    position:absolute;
+    left: 1000px;
+     
+ }
+ html{
+   background-color:rgb(20, 25, 75);
+ }
+ h3{
+    border-style: solid;
+    border-radius: 10px;
+    border-color:rgba(0, 183, 255, 0.897);
+    background-color:aquamarine;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:20px;
+    padding: 0px;
+    position:relative;
+    top: 20px;
+    display: inline
+    
+ }
+ #noteInput{
+   position:relative;
+
+   top: 50px;
+
+ }
+
+
