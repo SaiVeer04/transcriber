@@ -24,15 +24,15 @@ save.onclick = function() {
 	var title = titlearea.value;
 	if (database != null && users != null && !titlearea.value.includes("/") && /\S/.test(title)) {
 		var textValue = textarea.value;
-		firebase.database().ref("users/" + id +"/titles").update ({
-			[time]:
-				titlearea.value,
-		});
+// 		firebase.database().ref("users/" + id +"/titles").update ({
+// 			[time]:
+// 				titlearea.value,
+// 		});
 		firebase.database().ref("users/" + id + "/" + titlearea.value).update ({
 			"text": textarea.value
 		});
              		
-	  	 
+	  	Add(titlearea.value, textarea.value);
 		
 	} else if (titlearea.value.includes("/")) { 
 		alert("The title of your document may not contain a slash, please remove them and try again...");
@@ -44,6 +44,18 @@ save.onclick = function() {
 }
 
 function Add(snapshot) {
+        var ddl = document.getElementById("selectTest");
+        var option = document.createElement("OPTION");
+        var name = snapshot.val();
+	var text = snapshot.child("text").val();
+	
+	console.log("Title: " + name);
+	console.log("Name: " + text);
+        option.innerHTML = name.toString();
+        ddl.options.add(option);
+}
+
+function Add(title, value) {
         var ddl = document.getElementById("selectTest");
         var option = document.createElement("OPTION");
         var name = snapshot.val();
@@ -72,11 +84,9 @@ function onSignIn(googleUser) {
 	for (i = 1; i < length; i++) {
 	  	select.options[i] = null;
 	}
-	var dbRef = database.ref("users/" + id + "");
+	var dbRef = database.ref("users/" + id);
 	dbRef.on("child_added", function(snapshot) {
-		if (snapshot.val().toString() != "titles") {
-			Add(snapshot);
-		}
+		Add(snapshot);
 	});
 }
 
