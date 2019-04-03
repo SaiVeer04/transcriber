@@ -5,10 +5,10 @@
 }
 
 #start_button {
-  position: absolute;
+  position: relative;
 	background-color: #4CAF50;
-  top: 130px; 
-  left: 920px;
+  top: 50px; 
+  left: -5px;
 }
 
 #end_button {
@@ -38,8 +38,8 @@ button {
 
  }
 #titleText{
-    position:absolute;
-    left: 1000px;
+    position:relative;
+    left: 10px;
      
  }
  html{
